@@ -1,0 +1,4 @@
+name: Descripcion variables 'outcome'
+description: >
+   Plantilla para la generacion de variables 'outcome' del proyecto 'Edad con Salud'
+create_dir: FALSE

@@ -1,0 +1,13 @@
+Binding: setup_ecs_project
+Title: Gestión de datos de "Edad con Salud"
+Subtitle:
+  Utiliza este proyecto para el manejo de datos de "Edad con Salud" (e.g., generación de variables "outome")
+Caption: Configurar proyecto de datos de "Edad con Salud"
+Icon: ../../../www/img/logo_small.png
+OpenFiles: readme.md
+
+Parameter: exec_conf
+Widget: CheckboxInput
+Label: Ejecutar configuración del paquete "ecs.data"
+Default: On
+Position: left

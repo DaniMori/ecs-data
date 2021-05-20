@@ -1,0 +1,231 @@
+---
+title: "Edad con Salud -- cohort [cohort] -- [assessment] -- '[variable name(s)/domain]'" ## TODO: Añadir "cohort", "assessment" y "variable name(s)/domain"
+output:
+  word_document:
+    reference_docx:  ../../../../www/Description_outcome_vars_template.docx ## TODO: Revisar ruta de archivo plantilla
+bibliography: "`r file.path(rstudioapi::getActiveProject(), 'www/Edad_con_salud_outcome_vars.bib')`"
+csl: "`r file.path(rstudioapi::getActiveProject(), 'www/apa-old-doi-prefix.csl')`"
+---
+
+```{r setup, include=FALSE}
+# Activar los paquetes que R necesita para ejecutar el código:
+
+library(Statamarkdown)
+library(knitr)
+
+
+# Ruta del ejecutable de Stata (Ejecuta `sysdir` en Stata para encontrar la ruta)
+
+## TODO: sustituir '[path/to/stata.exe]' por la ruta a Stata, o eliminar siguiente linea:
+STATA_PATH <- "[path/to/]StataSE-64.exe"
+
+
+# Opciones de configuración de las salidas de R y Stata:
+
+opts_chunk$set(        # Para todos los 'chunks' de código:
+  ## TODO: Descomentar si hace falta y sustituir '[path/to/stata.exe]' por la ruta a Stata (ejecutar `sysdir` en Stata)
+  # engine.path = list(stata = STATA_PATH),
+  echo        = TRUE,  #   - Muestra la sintaxis en el documento
+  message     = FALSE, #   - Omite mensajes de R
+  warning     = FALSE, #   - Omite avisos de R
+  results     = 'hide',#   - Omite los resultados de ejecutar la sintaxis
+  cleanlog    = TRUE,  #   - Omite repetir sintaxis en resultados de Stata
+  collectcode = TRUE   #   - Reutiliza el código de Stata de 'chunks' anteriores
+)
+```
+
+```{=html}
+<!--
+
+Consideraciones generales:
+
+-   Puesto que nuestros datos son analizados por investigadores/as procedentes de distintas partes del mundo, todos los documentos deben estar en inglés.
+
+-   El nombre de este archivo  debe tener la siguiente estructura: “Description_[variable]_[qualifiers]”. En '[qualifiers]' se añadirá cualquier particularidad, en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida).
+
+-   Si se trata de una variable que ya estaba generada en evaluaciones anteriores/otras cohortes, puedes adaptar la información de ese documento. En ese caso, por favor, revisa cuidadosamente que la información contenida se ajusta a las particularidades de los datos.
+
+-->
+```
+# Variable information
+
+<!-- TODO: Añadir variables outcome a la tabla -->
+
+<!-- TODO: Eliminar ejemplos -->
+
+| Main variable name | Label                      | Format      | Code                 |
+|:-------------------|:---------------------------|:------------|:---------------------|
+| **[var_name]**     | [Etiqueta]                 | [Formato]   | [Categorías / Rango] |
+| **bmi_cont**       | Body mass index continuous | Continuous  | 16-40                |
+| **bmi_cont**       | Body mass index categories | Categorical | 1 Underweight;       |
+|                    |                            |             | 2 Normal weight      |
+|                    |                            |             | 3 Overweight         |
+|                    |                            |             | 4 Obese              |
+
+<!-- En esta tabla debes incluir la variable principal, así como las transformaciones pertinentes asociadas a esta variable, como ocurre con el ejemplo anterior. En el caso de que la/s variable/s generada/s que requiera/n la creación previa de otras variables, solo se incluirán aquellas que pueden resultar clave para entender o analizar la variable final. Por ejemplo, si creas una variable a partir de otra existente en la que eliminas casos con datos inválidos o modificas las etiquetas, no es necesario que incluyas esta información en este punto (tampoco en la base de datos). Los/as investigadores/as podrán verlo en el algoritmo. En caso que tengas dudas sobre qué variables incluir en este punto, por favor, pregunta a alguno de los/as compañeros responsables del proyecto. -->
+
+<br> <!-- Salto de línea (i.e. párrafo vacío); añadir donde se necesite -->
+
+# Variable description
+
+<!-- Por favor, incluye aquí una breve descripción de la variable o constructo que estás trabajando. Qué significa o qué evalúa esa variable y por qué es importante. -->
+
+# Explanation on how the variables were created
+
+```{=html}
+<!-- Este apartado es complementario al siguiente. Trata de describir, de forma clara y concisa, cómo has generado la variable. El objetivo de esta sección es doble. Por un lado, que sirva de apoyo para los/as investigadores/as que pudieran no estar familiarizados con el código utilizado para generar la/s variable/s (e.g., R, Stata, SPSS, SAS ). Por otro, facilitar la información suficiente para describir adecuadamente la/s variable/s en los artículos científicos.
+
+Si se trata de variable/s que ya se había/n generado en ocasiones anteriores (e.g., evaluaciones o cohortes distintas), por favor, documenta las potenciales particularidades o modificaciones que realices (e.g., versión reducida, detección de errores). -->
+```
+# Syntax used to create the variable (Stata 15)
+
+<!-- TODO: Cambiar software y versión en el título según correponda a la sintaxis utilizada (e.g., 'R 4.0.5' en lugar de 'Stata 15') -->
+
+<!-- Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s. Es fundamental que revises minuciosamente esta sección. Cualquier investigador/a debería poder generar la/s variable/s y obtener los mismos resultados. Por favor, indica también el programa utilizado (e.g., Stata, R, SPSS, SAS). Es recomendable incluir también una pequeña tabla con los descriptivos principales de esta/s variable/s (i.e., n, frecuencia absoluta y relativa, rango, media…). -->
+
+<br>
+
+```{stata load-data, echo=FALSE}
+* TODO: Descomentar linea correspondiente a la base de datos maestra a utilizar
+
+* Cohorte 2011, linea base:
+* use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Ola_1_Linea_base\All_COURAGE_VFINAL.dta"
+
+* Cohorte 2011, ola 2:
+* use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Ola_2\20150916 Database COURAGE wave 1.dta"
+
+* Cohorte 2011, ola 3:
+* use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Ola_3\Cohorte_2011\FINAL\20190208_PES16028242_Seguimiento_final_completo_V6.dta"
+
+* Cohorte 2019, linea base:
+* use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Ola_3\Cohorte_2019\Muestra completa\PES16028242_MN_Final202104.dta"
+* use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Ola_3\Cohorte_2019\Submuestra_1_preconfinamiento\Edad con Salud ola 3_cohorte 2019_base completa_Stata14.dta" // Para Stata 14+
+* use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Ola_3\Cohorte_2019\Submuestra_1_preconfinamiento\Edad con Salud ola 3_cohorte 2019_base completa_Stata13.dta" // Para Stata 13+
+
+* Cohorte 2019, ola post-confinamiento:
+* use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Subestudio_COVID\Edad_con_salud_Fichero_Completo.dta"
+```
+
+```{=html}
+<!--
+
+- Variable/s de identificación
+
+Para la cohorte 2019 la variable de identificación es ID. No obstante, con el fin de poder unificar los datos de esta cohorte con aquellos de la cohorte 2011 así como con los datos del subestudio COVID, se ha creado una variable de identificación común: ID_ECS. 
+Así, la variable de identificación que debes incluir para la cohorte 2019 es ID_ECS. En caso que no estuviera en la base de datos maestra, debes saber que esta variable es una réplica de ID.
+
+
+- Variable(s) generada(s)
+
+Debes incluir la variable principal, así como las transformaciones pertinentes asociadas a esta variable. En el caso de que la/s variable/s generada/s que requiera/n la creación previa de otras variables, solo se incluirán aquellas que pueden resultar clave para entender o analizar la variable final. Por ejemplo, si creas una variable a partir de otra existente en la que eliminas casos con datos inválidos o modificas las etiquetas, no es necesario que incluyas esta información en este punto (tampoco en el documento de descripción). Los/as investigadores/as podrán verlo en el algoritmo. En caso que tengas dudas sobre qué variables incluir en este punto, por favor, pregunta a alguno de los/as compañeros responsables del proyecto.
+
+
+- Variables de apoyo
+
+Puesto que en ocasiones no todos los individuos contactados participan en el estudio (porque no quieren, porque no pueden, porque no los encontramos…) y dado que no todos los participantes responden a todos los ítems, se incluirán las siguientes variables como apoyo para la interpretación de los resultados:
+
+  - Variable estado de entrevista: q0007a_result
+    El código 1 hace referencia a todas las personas que han participado en el estudio.
+    
+  - Variable proxy: proxy
+    El código 1 hace referencia a los participantes que realizaron una entrevista proxy. Esto quiere decir que el individuo seleccionado no contestó las preguntas, sino que otra persona respondió en su lugar a una versión reducida del cuestionario. El código 2 hace referencia a los participantes que hicieron entrevista directa.
+
+
+- Otras consideraciones:
+
+  - El número de participantes (n) que debe aparecer en cada base de datos debe ser correspondiente con aquella que aparece en la base de datos maestra u original. Para la base de datos de la muestra completa serán 3000 participantes. En el caso de la muestra pre-confinamiento serán 1935 participantes. 
+
+  - Es recomendable que revises los descriptivos de la/s variable/s generadas. De esta forma podrás detectar posibles errores (e.g., un porcentaje de datos perdidos que no responde a lo esperado; una prevalencia de x patología muy superior o inferior a lo que la evidencia científica señala).
+
+-->
+```
+```{stata descriptives, collectcode=FALSE}
+* TODO: Añadir estadísticos descriptivos de la(s) variable(s) generada(s)
+```
+
+```{=html}
+<!--
+
+Otras consideraciones:
+
+-   Las bases de datos deben tener formato .dta (Stata)
+
+-   El nombre de estos archivos debe tener la siguiente estructura: “Outcome_nombrevariable_particularidad”. Se añadirá cualquier particularidad en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida). 
+
+-->
+```
+```{stata save-data, echo=FALSE}
+* TODO: Sustituir '[variable(s) generada(s)]' por las variables del dataset
+keep ID_ECS q0007a_result proxy [variable(s) generada(s)]
+
+
+* TODO: Descomentar linea correspondiente a la cohorte y ola utilizada
+* TODO: Sustituir '[variable]' y '[qualifier]' por los valores correspondientes
+
+* Cohorte 2011, linea base:
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 1 - Línea base\Outcomes\Outcome datasets\Outcome_[variable]_[qualifier].dta" // TODO: Aviso! El acento en "Línea" puede dar problemas con la ruta del archivo
+
+* Cohorte 2011, ola 2:
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 2\Outcomes\Outcome datasets\Outcome_[variable]_[qualifier].dta"
+
+* Cohorte 2011, ola 3:
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2011\Outcome datasets\Outcome_[variable]_[qualifier].dta"
+
+* Cohorte 2019, linea base:
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Muestra completa\Outcome datasets\Outcome_[variable]_[qualifier].dta"
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Submuestra_1_preconfinamiento\Outcome datasets\Outcome_[variable]_[qualifier].dta"
+
+* Cohorte 2019, ola post-confinamiento:
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Subestudio COVID\Outcomes\Outcome datasets\Outcome_[variable]_[qualifier].dta"
+```
+
+# Contact person:
+
+<!-- Incluye tu nombre completo, correo electrónico, teléfono e institución a la que perteneces. Si el algoritmo que has generado ha estado basado en el trabajo que ya había hecho otro/a compañero/a, por favor, indícalo. -->
+
+<!-- TODO: Completar '[Nombre y apellidos]', '[nombre.buzon@institucion.org]', y '[prefijo]' y '[teléfono]' -->
+
+-   Name: [Nombre y apellidos]
+-   e-mail: [[nombre.buzon\@institucion.org](mailto:nombre.buzon@institucion.org){.email}]
+-   Phone number: (+[prefijo]) [teléfono]
+
+<br>
+
+<!-- TODO: Completar / eliminar "original version" según corresponda -->
+
+[ Original version:
+
+-   Name: [Nombre y apellidos]
+-   e-mail: [[nombre.buzon\@institucion.org](mailto:nombre.buzon@institucion.org){.email}]
+-   Phone number: (+[prefijo]) [teléfono] ]
+
+# References
+
+<!-- Indica las referencias utilizadas para explicar o generar la/s variable/s. Esta información será igualmente útil para citar apropiadamente en nuestros artículos científicos. -->
+
+::: {#refs}
+:::
+
+\newpage
+
+# Session info
+
+```{r}
+devtools::session_info()
+```
+
+```{=html}
+<!--
+
+He terminado de generar la/s variable/s.
+
+¡Maravilloso, enhorabuena! Cuando hayas terminado de generar la/s variable/s, por favor, actualiza el documento
+
+    PENDIENTE ubicado en PENDIENTE
+
+Así, el/la compañero/a al que le corresponda podrá examinar los distintos archivos y, sobre todo, el algoritmo. En caso de que se detecten inconsistencias, errores o surjan dudas, se te comunicará para proceder con su revisión.
+
+Finalmente, cuando todas las variables estén generadas y revisadas se creará una base de datos común con todas ellas y los datos sociodemográficos principales de los participantes. 
+
+-->
+```

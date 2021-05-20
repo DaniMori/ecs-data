@@ -1,0 +1,9 @@
+Name: SPSS a Stata
+Description: Transforma un archivo en formato SPSS (.sav) a formato Stata (.dta)
+Binding: spss_to_stata
+Interactive: false
+
+Name: Generar outcomes
+Description: Genera documentación y datasets de variables outcome
+Binding: generate_outcomes
+Interactive: true

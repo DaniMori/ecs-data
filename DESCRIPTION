@@ -1,0 +1,35 @@
+Package: ecs.data
+Type: Package
+Title: Funciones para la gestión de datos del proyecto "Edad con Salud"
+Version: 0.0.0.9000
+Authors@R: person("Daniel", "Morillo", email = "danivmorillo@gmail.com",
+                  role = c("aut", "cre"))
+URL: https://github.com/CCOMS-UAM/ecs-data
+Maintainer: Daniel Morillo <danivmorillo@gmail.com>
+Description: Este paquete provee algunas funciones para la gestión de datos
+    del proyecto "Edad con Salud". Principalmente, la creación y gestión de
+    variables "outcome" a partir de las bases de datos maestras.
+Imports:
+    assertive.properties (>= 0.0-4),
+    assertive.strings    (>= 0.0-3),
+    configr              (>= 0.3.5),
+    devtools             (>= 2.4.1),
+    glue                 (>= 1.4.2),
+    haven                (>= 2.4.1),
+    htmltools            (>= 0.5.1.1),
+    miniUI               (>= 0.1.1.1),
+    rmarkdown            (>= 2.8),
+    rstudioapi           (>= 0.13),
+    shiny                (>= 1.6.0),
+    stringr              (>= 1.4.0),
+    tools                (>= 4.0.5),
+    utils                (>= 4.0.5)
+License: file LICENSE
+BugReports: https://github.com/CCOMS-UAM/ecs-data/issues
+Encoding: UTF-8
+RoxygenNote: 7.1.1
+Suggests:
+    knitr     (>= 1.33),
+    testthat  (>= 3.0.2),
+    rmarkdown (>= 2.8)
+VignetteBuilder: knitr, rmarkdown
