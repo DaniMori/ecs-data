@@ -23,22 +23,18 @@ setup_ecs_project <- function(path, ...) {
   resource_path <- file.path(path, RESOURCE_DIR)
 
   file.copy(
-    from = system.file(RESOURCE_DIR, WORD_TEMPLATE_FILE, package = PKG_NAME),
-    to   = file.path(resource_path, WORD_TEMPLATE_FILE)
+    from = get_proj_bib_file(where = "package"),
+    to   = get_proj_bib_file(where = "project", proj_path = path)
   )
   file.copy(
-    from = system.file(RESOURCE_DIR, BIBLIOGRAPHY_FILE, package = PKG_NAME),
-    to   = file.path(resource_path, BIBLIOGRAPHY_FILE)
-  )
-  file.copy(
-    from = system.file(RESOURCE_DIR, README_FILE, package = PKG_NAME),
-    to   = file.path(path, README_FILE)
+    from = get_proj_readme_file(where = "package"),
+    to   = get_proj_readme_file(where = "project", proj_path = path)
   )
 
 
   # collect inputs:
 
-  params <- list(...)
+  params <- list(...) # TODO: Not used
 
 
   # Execute configuration (if requested):

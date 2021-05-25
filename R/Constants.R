@@ -60,8 +60,16 @@ COMPLETE_DIR      <- "muestra_completa"
 RESOURCE_DIR      <- "www"
 
 WORD_TEMPLATE_FILE <- "Description_outcome_vars_template.docx"
-BIBLIOGRAPHY_FILE  <- "Edad_con_salud.bib"
+CITATION_SYLE_FILE <- "apa-old-doi-prefix.csl"
+BIBLIOGRAPHY_FILE  <- "Edad_con_salud_outcome_vars.bib"
 README_FILE        <- "readme.md"
+
+PROJECT_FILES <- c(
+  WORD_TEMPLATE_FILE,
+  CITATION_SYLE_FILE,
+  BIBLIOGRAPHY_FILE,
+  README_FILE
+)
 
 CONFIG_TYPE <- "yaml"
 CONFIG_FILE <- paste("config", CONFIG_TYPE, sep = FILE_EXT_SEP)

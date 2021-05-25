@@ -2,6 +2,11 @@
 
 export(config_ecs_folders)
 export(configure_ecs)
+export(get_pkg_docx_template)
+export(get_proj_bib_file)
+export(get_proj_csl_file)
+export(get_proj_readme_file)
+export(get_projectfile_path)
 export(spss_to_stata)
 importFrom(Statamarkdown,find_stata)
 importFrom(assertive.properties,is_empty)

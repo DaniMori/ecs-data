@@ -2,9 +2,9 @@
 title: "Edad con Salud -- cohort [cohort] -- [assessment] -- '[variable name(s)/domain]'" ## TODO: Añadir "cohort", "assessment" y "variable name(s)/domain"
 output:
   word_document:
-    reference_docx:  ../../../../www/Description_outcome_vars_template.docx ## TODO: Revisar ruta de archivo plantilla
-bibliography: "`r file.path(rstudioapi::getActiveProject(), 'www/Edad_con_salud_outcome_vars.bib')`"
-csl: "`r file.path(rstudioapi::getActiveProject(), 'www/apa-old-doi-prefix.csl')`"
+    reference_docx: !expr ecs.data::get_pkg_docx_template()
+bibliography: "`r ecs.data::get_proj_bib_file()`"
+csl: "`r ecs.data::get_proj_csl_file()`"
 ---
 
 ```{r setup, include=FALSE}
