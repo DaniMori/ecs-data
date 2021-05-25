@@ -39,7 +39,7 @@
 #' @importFrom rstudioapi        showDialog
 #' @importFrom Statamarkdown     find_stata
 #' @importFrom stringr           str_extract
-#' @importFrom utils             install.packages
+#' @importFrom utils             flush.console install.packages
 #'
 #' @family configuration functions
 #' @examples \dontrun{configure_ecs()}
@@ -49,6 +49,8 @@ configure_ecs <- function(check_R_version     = FALSE,
                           check_Stata         = TRUE,
                           conf_folders        = TRUE,
                           confirmation        = FALSE) {
+
+  if (confirmation) rstudioapi::showDialog(PKG_NAME, CONFIGURATION_MSG)
 
   result <- TRUE # Valor por defecto para el resultado de la configuración
 
@@ -66,6 +68,8 @@ configure_ecs <- function(check_R_version     = FALSE,
 
       warning(glue::glue(R_VERSION_OLD))
     }
+
+    utils::flush.console()
   }
 
 
@@ -92,6 +96,8 @@ configure_ecs <- function(check_R_version     = FALSE,
           result # Keeps the `FALSE` value if it has been already set to `FALSE`
       }
     }
+
+    utils::flush.console()
   }
 
 
@@ -118,6 +124,7 @@ configure_ecs <- function(check_R_version     = FALSE,
         result <- FALSE
       }
 
+      utils::flush.console()
     }
   }
 
@@ -135,16 +142,28 @@ configure_ecs <- function(check_R_version     = FALSE,
 
       message(glue::glue(STATA_FOUND))
     }
+
+    utils::flush.console()
   }
 
   # Configure project folders:
-  if (conf_folders) result <- config_ecs_folders() && result
+  if (conf_folders) {
+
+    if (confirmation) rstudioapi::showDialog(PKG_NAME, CONFIGURATION_DIRS)
+    utils::flush.console()
+
+    result <- config_ecs_folders() && result
+
+    utils::flush.console()
+  }
 
   # Inform of result
   confirmation_message <- if (result) CONFIGURATION_OK else CONFIGURATION_WARN
 
   if (confirmation) rstudioapi::showDialog(PKG_NAME, confirmation_message)
   else message(confirmation_message)
+
+  utils::flush.console()
 
   invisible(TRUE)
 }

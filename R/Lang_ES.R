@@ -1,5 +1,7 @@
 CHECK_DEPENDENCIES <- "Comprobando e instalando paquetes necesarios"
 
+CONFIGURATION_MSG  <- "Se va a configurar el paquete 'ecs.data'"
+CONFIGURATION_DIRS <- "Selecciona la ubicacion de las carpetas de Edad con Salud"
 CONFIGURATION_OK   <- "El paquete 'ecs.data' se ha configurado correctamente"
 CONFIGURATION_WARN <-
   "Hubo problemas durante la configuraciOn del paquete 'ecs.data'"
