@@ -9,5 +9,5 @@ OpenFiles: readme.md
 Parameter: exec_conf
 Widget: CheckboxInput
 Label: Ejecutar configuración del paquete "ecs.data"
-Default: On
+Default: Off
 Position: left
