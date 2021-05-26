@@ -7,6 +7,8 @@ bibliography: "`r ecs.data::get_proj_bib_file()`"
 csl: "`r ecs.data::get_proj_csl_file()`"
 ---
 
+<!-- TODO: Borrar texto "Consideraciones generales" a continuación -->
+
 Consideraciones generales:
 
 - Puesto que nuestros datos son analizados por investigadores/as procedentes de distintas partes del mundo, todos los documentos deben estar en inglés.
@@ -47,6 +49,8 @@ opts_chunk$set(        # Para todos los 'chunks' de código:
 
 # Variable information
 
+<!-- TODO: Borrar párrafo a continuación -->
+
 En esta tabla debes incluir la variable principal, así como las transformaciones pertinentes asociadas a esta variable, como ocurre con el ejemplo anterior. En el caso de que la/s variable/s generada/s que requiera/n la creación previa de otras variables, solo se incluirán aquellas que pueden resultar clave para entender o analizar la variable final. Por ejemplo, si creas una variable a partir de otra existente en la que eliminas casos con datos inválidos o modificas las etiquetas, no es necesario que incluyas esta información en este punto (tampoco en la base de datos). Los/as investigadores/as podrán verlo en el algoritmo. En caso que tengas dudas sobre qué variables incluir en este punto, por favor, pregunta a alguno de los/as compañeros responsables del proyecto.
 
 <!-- TODO: Añadir variables outcome a la tabla -->
@@ -70,11 +74,15 @@ En esta tabla debes incluir la variable principal, así como las transformacione
 
 # Variable description
 
+<!-- TODO: Borrar párrafo a continuación -->
+
 Por favor, incluye aquí una breve descripción de la variable o constructo que estás trabajando. Qué significa o qué evalúa esa variable y por qué es importante.
 
 <!-- TODO: Redactar descripción de variable(s) -->
 
 # Explanation of how the variables were created
+
+<!-- TODO: Borrar párrafos a continuación -->
 
 Este apartado es complementario al siguiente. Trata de describir, de forma clara y concisa, cómo has generado la variable. El objetivo de esta sección es doble. Por un lado, que sirva de apoyo para los/as investigadores/as que pudieran no estar familiarizados con el código utilizado para generar la/s variable/s (e.g., R, Stata, SPSS, SAS ). Por otro, facilitar la información suficiente para describir adecuadamente la/s variable/s en los artículos científicos.
 
@@ -85,6 +93,8 @@ Si se trata de variable/s que ya se había/n generado en ocasiones anteriores (e
 # Syntax used to create the variable (Stata 15)
 
 <!-- TODO: Cambiar software y versión en el título según correponda a la sintaxis utilizada (e.g., 'R 4.0.5' en lugar de 'Stata 15') -->
+
+<!-- TODO: Borrar párrafo a continuación -->
 
 Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s. Es fundamental que revises minuciosamente esta sección. Cualquier investigador/a debería poder generar la/s variable/s y obtener los mismos resultados. Por favor, indica también el programa utilizado (e.g., Stata, R, SPSS, SAS). Es recomendable incluir también una pequeña tabla con los descriptivos principales de esta/s variable/s (i.e., n, frecuencia absoluta y relativa, rango, media…).
 
@@ -115,6 +125,8 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 * TODO: Escribir aquí la sintaxis de generación de las variables
 ```
 
+<!-- TODO: Borrar texto "Otras consideraciones" a continuación -->
+
 - Otras consideraciones:
 
   - El número de participantes (n) que debe aparecer en cada base de datos debe ser correspondiente con aquella que aparece en la base de datos maestra u original. Para la base de datos de la muestra completa serán 3000 participantes. En el caso de la muestra pre-confinamiento serán 1935 participantes. 
@@ -124,6 +136,8 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 ```{stata descriptives, collectcode=FALSE}
 * TODO: Añadir estadísticos descriptivos de la(s) variable(s) generada(s)
 ```
+
+<!-- TODO: Borrar párrafos a continuación -->
 
 - Variable/s de identificación
 
@@ -145,7 +159,6 @@ Puesto que en ocasiones no todos los individuos contactados participan en el est
     
   - Variable proxy: proxy
     El código 1 hace referencia a los participantes que realizaron una entrevista proxy. Esto quiere decir que el individuo seleccionado no contestó las preguntas, sino que otra persona respondió en su lugar a una versión reducida del cuestionario. El código 2 hace referencia a los participantes que hicieron entrevista directa.
-
 
 
 Otras consideraciones:
@@ -181,6 +194,8 @@ keep ID_ECS q0007a_result proxy [variable(s) generada(s)]
 
 # Contact person:
 
+<!-- TODO: Borrar párrafo a continuación -->
+
 Incluye tu nombre completo, correo electrónico, teléfono e institución a la que perteneces. Si el algoritmo que has generado ha estado basado en el trabajo que ya había hecho otro/a compañero/a, por favor, indícalo.
 
 <!-- TODO: Completar '[Nombre y apellidos]', '[nombre.buzon@institucion.org]', y '[prefijo]' y '[teléfono]' -->
@@ -201,12 +216,16 @@ Incluye tu nombre completo, correo electrónico, teléfono e institución a la q
 
 # References
 
+<!-- TODO: Borrar párrafo a continuación -->
+
 Indica las referencias utilizadas para explicar o generar la/s variable/s. Esta información será igualmente útil para citar apropiadamente en nuestros artículos científicos.
 
 ::: {#refs}
 :::
 
 \newpage
+
+<!-- TODO: Borrar párrafos a continuación -->
 
 He terminado de generar la/s variable/s.
 
