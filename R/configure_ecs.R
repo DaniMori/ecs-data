@@ -89,7 +89,7 @@ configure_ecs <- function(check_R_version     = FALSE,
           },
           error = function(e) {
 
-            message(geterrmessage(e))
+            message(geterrmessage())
             FALSE
           }
         ) &&
@@ -150,7 +150,6 @@ configure_ecs <- function(check_R_version     = FALSE,
   if (conf_folders) {
 
     if (confirmation) rstudioapi::showDialog(PKG_NAME, CONFIGURATION_DIRS)
-    utils::flush.console()
 
     result <- config_ecs_folders() && result
 

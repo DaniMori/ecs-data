@@ -19,6 +19,7 @@
 #' @importFrom configr    write.config
 #' @importFrom glue       glue
 #' @importFrom rstudioapi selectDirectory
+#' @importFrom utils      flush.console
 #'
 #' @family configuration functions
 #' @examples \dontrun{config_ecs_folders()}
@@ -38,9 +39,11 @@ config_ecs_folders <- function() {
   if (is.null(db_dir)) {
 
     warning(NO_DB_FOLDER_SELECTED)
+    utils::flush.console()
     invisible(FALSE)
   }
   message(glue::glue(DB_FOLDER_SELECTED))
+  utils::flush.console()
 
   doc_dir <- rstudioapi::selectDirectory(
     caption = SELECT_DOC_FOLDER,
@@ -54,9 +57,11 @@ config_ecs_folders <- function() {
   if (is.null(doc_dir)) {
 
     warning(NO_DOC_FOLDER_SELECTED)
+    utils::flush.console()
     invisible(FALSE)
   }
   message(glue::glue(DOC_FOLDER_SELECTED))
+  utils::flush.console()
 
   dirs_list <- list(DB = db_dir, DOC = doc_dir)
 
@@ -69,6 +74,7 @@ config_ecs_folders <- function() {
   if (!result) {
 
     warning(CONFIG_FOLDER_ERROR)
+    utils::flush.console()
     invisible(FALSE)
   }
 
