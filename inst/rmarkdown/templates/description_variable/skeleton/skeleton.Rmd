@@ -201,7 +201,7 @@ Incluye tu nombre completo, correo electrónico, teléfono e institución a la q
 <!-- TODO: Completar '[Nombre y apellidos]', '[nombre.buzon@institucion.org]', y '[prefijo]' y '[teléfono]' -->
 
 -   Name: [Nombre y apellidos]
--   e-mail: [nombre.buzon\@institucion.org](mailto:nombre.buzon@institucion.org){.email}
+-   e-mail: [nombre.buzon\@institucion.org](mailto:[nombre.buzon@institucion.org]){.email}
 -   Phone number: (+[prefijo]) [teléfono]
 
 <br>
@@ -211,7 +211,7 @@ Incluye tu nombre completo, correo electrónico, teléfono e institución a la q
 [ Original version:
 
 -   Name: [Nombre y apellidos]
--   e-mail: [[nombre.buzon\@institucion.org](mailto:nombre.buzon@institucion.org){.email}]
+-   e-mail: [nombre.buzon\@institucion.org](mailto:[nombre.buzon@institucion.org]){.email}
 -   Phone number: (+[prefijo]) [teléfono] ]
 
 # References
