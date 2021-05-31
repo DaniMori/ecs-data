@@ -12,7 +12,7 @@ Para crear tu primer documento de descripción de "Variable outcome",
 
 4. Pulsa `OK` para crear un nuevo documento basado en esta plantilla
 
-5. Pulsa el botón de guardar \u1F4BE
+5. Pulsa el botón de guardar 💾
 
 6. Selecciona la carpeta de la cohorte y ola que corresponda
 
