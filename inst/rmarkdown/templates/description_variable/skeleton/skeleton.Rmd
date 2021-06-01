@@ -39,8 +39,6 @@ opts_chunk$set(        # Para todos los 'chunks' de código:
   ## TODO: Descomentar si hace falta
   # engine.path = list(stata = STATA_PATH),
   echo        = TRUE,  #   - Muestra la sintaxis en el documento
-  message     = FALSE, #   - Omite mensajes de R
-  warning     = FALSE, #   - Omite avisos de R
   results     = 'hide',#   - Omite los resultados de ejecutar la sintaxis
   cleanlog    = TRUE,  #   - Omite repetir sintaxis en resultados de Stata
   collectcode = TRUE   #   - Reutiliza el código de Stata de 'chunks' anteriores
