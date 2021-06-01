@@ -55,18 +55,18 @@ En esta tabla debes incluir la variable principal, así como las transformacione
 
 <!-- TODO: Eliminar ejemplos -->
 
-+--------------------+----------------------------+-------------+----------------------+
-| Main variable name | Label                      | Format      | Code                 |
-+:===================+:===========================+:============+:=====================+
-| **[var_name]**     | [Etiqueta]                 | [Formato]   | [Categorías / Rango] |
-+--------------------+----------------------------+-------------+----------------------+
-| **bmi_cont**       | Body mass index continuous | Continuous  | 16-40                |
-+--------------------+----------------------------+-------------+----------------------+
-| **bmi**            | Body mass index categories | Categorical | 1 Underweight;\      |
-|                    |                            |             | 2 Normal weight;\    |
-|                    |                            |             | 3 Overweight;\       |
-|                    |                            |             | 4 Obese              |
-+--------------------+----------------------------+-------------+----------------------+
+-------------------------------------------------------------------------------
+Main variable name  Label                      Format      Code
+------------------- -------------------------- ----------- --------------------
+**[var_name]**      [Etiqueta]                 [Formato]   [Categorías / Rango]
+
+**bmi_cont**        Body mass index continuous Continuous  16-40
+
+**bmi**             Body mass index categories Categorical 1 Underweight;\
+                                                           2 Normal weight;\
+                                                           3 Overweight;\
+                                                           4 Obese
+-------------------------------------------------------------------------------
 
 <br> <!-- Salto de línea (i.e. párrafo vacío); añadir donde se necesite -->
 
