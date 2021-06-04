@@ -15,7 +15,7 @@ Consideraciones generales:
 
 -   Si se trata de una variable que ya estaba generada en evaluaciones anteriores/otras cohortes, puedes adaptar la información de ese documento. En ese caso, por favor, revisa cuidadosamente que la información contenida se ajusta a las particularidades de los datos.
 
-<!-- TODO: Borrar texto "Consideraciones generales" más arriba -->
+<!--# TODO: Borrar texto "Consideraciones generales" más arriba -->
 
 ```{r setup, include=FALSE}
 # Activar los paquetes que R necesita para ejecutar el código:
@@ -48,7 +48,7 @@ opts_chunk$set(        # Para todos los 'chunks' de código:
 
 En esta tabla debes incluir la variable principal, así como las transformaciones pertinentes asociadas a esta variable, como ocurre con el ejemplo anterior. En el caso de que la/s variable/s generada/s que requiera/n la creación previa de otras variables, solo se incluirán aquellas que pueden resultar clave para entender o analizar la variable final. Por ejemplo, si creas una variable a partir de otra existente en la que eliminas casos con datos inválidos o modificas las etiquetas, no es necesario que incluyas esta información en este punto (tampoco en la base de datos). Los/as investigadores/as podrán verlo en el algoritmo. En caso que tengas dudas sobre qué variables incluir en este punto, por favor, pregunta a alguno de los/as compañeros responsables del proyecto.
 
-<!-- TODO: Borrar párrafo anterior -->
+<!--# TODO: Borrar párrafo anterior -->
 
 +--------------------+----------------------------+-------------+----------------------+
 | Main variable name | Label                      | Format      | Code                 |
@@ -63,19 +63,19 @@ En esta tabla debes incluir la variable principal, así como las transformacione
 |                    |                            |             | 4 Obese              |
 +--------------------+----------------------------+-------------+----------------------+
 
-<!-- TODO: Añadir variables outcome a la tabla -->
+<!--# TODO: Añadir variables outcome a la tabla -->
 
-<!-- TODO: Eliminar ejemplos -->
+<!--# TODO: Eliminar ejemplos -->
 
-<br> <!-- Salto de línea (i.e. párrafo vacío); añadir donde se necesite -->
+<br> <!--# Salto de línea (i.e. párrafo vacío); añadir donde se necesite -->
 
 # Variable description
 
 Por favor, incluye aquí una breve descripción de la variable o constructo que estás trabajando. Qué significa o qué evalúa esa variable y por qué es importante.
 
-<!-- TODO: Borrar párrafo anterior -->
+<!--# TODO: Borrar párrafo anterior -->
 
-<!-- TODO: Redactar descripción de variable(s) -->
+<!--# TODO: Redactar descripción de variable(s) -->
 
 # Explanation of how the variables were created
 
@@ -83,17 +83,17 @@ Este apartado es complementario al siguiente. Trata de describir, de forma clara
 
 Si se trata de variable/s que ya se había/n generado en ocasiones anteriores (e.g., evaluaciones o cohortes distintas), por favor, documenta las potenciales particularidades o modificaciones que realices (e.g., versión reducida, detección de errores).
 
-<!-- TODO: Borrar párrafos anteriores -->
+<!--# TODO: Borrar párrafos anteriores -->
 
-<!-- TODO: Redactar explicación de la creación de variable(s) -->
+<!--# TODO: Redactar explicación de la creación de variable(s) -->
 
 # Syntax used to create the variable (Stata 15)
 
-<!-- TODO: Cambiar software y versión en el título según correponda a la sintaxis utilizada (e.g., 'R 4.0.5' en lugar de 'Stata 15') -->
+<!--# TODO: Cambiar software y versión en el título según correponda a la sintaxis utilizada (e.g., 'R 4.0.5' en lugar de 'Stata 15') -->
 
 Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s. Es fundamental que revises minuciosamente esta sección. Cualquier investigador/a debería poder generar la/s variable/s y obtener los mismos resultados. Por favor, indica también el programa utilizado (e.g., Stata, R, SPSS, SAS). Es recomendable incluir también una pequeña tabla con los descriptivos principales de esta/s variable/s (i.e., n, frecuencia absoluta y relativa, rango, media...).
 
-<!-- TODO: Borrar párrafo anterior -->
+<!--# TODO: Borrar párrafo anterior -->
 
 <br>
 
@@ -128,7 +128,7 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 
     -   Es recomendable que revises los descriptivos de la/s variable/s generadas. De esta forma podrás detectar posibles errores (e.g., un porcentaje de datos perdidos que no responde a lo esperado; una prevalencia de x patología muy superior o inferior a lo que la evidencia científica señala).
 
-<!-- TODO: Borrar texto "Otras consideraciones" anterior -->
+<!--# TODO: Borrar texto "Otras consideraciones" anterior -->
 
 ```{stata descriptives, collectcode=FALSE}
 * TODO: Añadir estadísticos descriptivos de la(s) variable(s) generada(s)
@@ -156,7 +156,7 @@ Otras consideraciones:
 
 -   El nombre de estos archivos debe tener la siguiente estructura: "Outcome_nombrevariable_particularidad". Se añadirá cualquier particularidad en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida).
 
-<!-- TODO: Borrar párrafos anteriores -->
+<!--# TODO: Borrar párrafos anteriores -->
 
 ```{stata save-data, echo=FALSE}
 * TODO: Sustituir '[variable(s) generada(s)]' por las variables del dataset
@@ -187,9 +187,9 @@ keep ID_ECS q0007a_result proxy [variable(s) generada(s)]
 
 Incluye tu nombre completo, correo electrónico, teléfono e institución a la que perteneces. Si el algoritmo que has generado ha estado basado en el trabajo que ya había hecho otro/a compañero/a, por favor, indícalo.
 
-<!-- TODO: Borrar párrafo anterior -->
+<!--# TODO: Borrar párrafo anterior -->
 
-<!-- TODO: Completar '[Nombre y apellidos]', '[nombre.buzon@institucion.org]', y '[prefijo]' y '[teléfono]' -->
+<!--# TODO: Completar '[Nombre y apellidos]', '[nombre.buzon@institucion.org]', y '[prefijo]' y '[teléfono]' -->
 
 -   Name: [Nombre y apellidos]
 -   e-mail: [nombre.buzon\@institucion.org](mailto:%5Bnombre.buzon@institucion.org%5D){.email}
@@ -197,7 +197,7 @@ Incluye tu nombre completo, correo electrónico, teléfono e institución a la q
 
 <br>
 
-<!-- TODO: Completar / eliminar "original version" según corresponda -->
+<!--# TODO: Completar / eliminar "original version" según corresponda -->
 
 [ Original version:
 
@@ -209,7 +209,7 @@ Incluye tu nombre completo, correo electrónico, teléfono e institución a la q
 
 Indica las referencias utilizadas para explicar o generar la/s variable/s. Esta información será igualmente útil para citar apropiadamente en nuestros artículos científicos.
 
-<!-- TODO: Borrar párrafo anterior -->
+<!--# TODO: Borrar párrafo anterior -->
 
 ::: {#refs}
 :::
@@ -226,7 +226,7 @@ Así, el/la compañero/a al que le corresponda podrá examinar los distintos arc
 
 Finalmente, cuando todas las variables estén generadas y revisadas se creará una base de datos común con todas ellas y los datos sociodemográficos principales de los participantes.
 
-<!-- TODO: Borrar párrafos anteriores -->
+<!--# TODO: Borrar párrafos anteriores -->
 
 # Session info
 
