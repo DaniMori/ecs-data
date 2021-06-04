@@ -7,16 +7,15 @@ bibliography: "`r ecs.data::get_proj_bib_file()`"
 csl: "`r ecs.data::get_proj_csl_file()`"
 ---
 
-<!-- TODO: Borrar texto "Consideraciones generales" a continuación -->
-
 Consideraciones generales:
 
-- Puesto que nuestros datos son analizados por investigadores/as procedentes de distintas partes del mundo, todos los documentos deben estar en inglés.
+-   Puesto que nuestros datos son analizados por investigadores/as procedentes de distintas partes del mundo, todos los documentos deben estar en inglés.
 
-- El nombre de este archivo  debe tener la siguiente estructura: “Description_[variable]_[qualifiers]”. En '[qualifiers]' se añadirá cualquier particularidad, en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida).
+-   El nombre de este archivo debe tener la siguiente estructura: "Description\_[variable]\_[qualifiers]". En '[qualifiers]' se añadirá cualquier particularidad, en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida).
 
-- Si se trata de una variable que ya estaba generada en evaluaciones anteriores/otras cohortes, puedes adaptar la información de ese documento. En ese caso, por favor, revisa cuidadosamente que la información contenida se ajusta a las particularidades de los datos.
+-   Si se trata de una variable que ya estaba generada en evaluaciones anteriores/otras cohortes, puedes adaptar la información de ese documento. En ese caso, por favor, revisa cuidadosamente que la información contenida se ajusta a las particularidades de los datos.
 
+<!-- TODO: Borrar texto "Consideraciones generales" más arriba -->
 
 ```{r setup, include=FALSE}
 # Activar los paquetes que R necesita para ejecutar el código:
@@ -55,18 +54,18 @@ En esta tabla debes incluir la variable principal, así como las transformacione
 
 <!-- TODO: Eliminar ejemplos -->
 
--------------------------------------------------------------------------------
-Main variable name  Label                      Format      Code
-------------------- -------------------------- ----------- --------------------
-**[var_name]**      [Etiqueta]                 [Formato]   [Categorías / Rango]
-
-**bmi_cont**        Body mass index continuous Continuous  16-40
-
-**bmi**             Body mass index categories Categorical 1 Underweight;\
-                                                           2 Normal weight;\
-                                                           3 Overweight;\
-                                                           4 Obese
--------------------------------------------------------------------------------
++--------------------+----------------------------+-------------+----------------------+
+| Main variable name | Label                      | Format      | Code                 |
++:===================+:===========================+:============+:=====================+
+| **[var_name]**     | [Etiqueta]                 | [Formato]   | [Categorías / Rango] |
++--------------------+----------------------------+-------------+----------------------+
+| **bmi_cont**       | Body mass index continuous | Continuous  | 16-40                |
++--------------------+----------------------------+-------------+----------------------+
+| **bmi**            | Body mass index categories | Categorical | 1 Underweight;\      |
+|                    |                            |             | 2 Normal weight;\    |
+|                    |                            |             | 3 Overweight;\       |
+|                    |                            |             | 4 Obese              |
++--------------------+----------------------------+-------------+----------------------+
 
 <br> <!-- Salto de línea (i.e. párrafo vacío); añadir donde se necesite -->
 
@@ -94,7 +93,7 @@ Si se trata de variable/s que ya se había/n generado en ocasiones anteriores (e
 
 <!-- TODO: Borrar párrafo a continuación -->
 
-Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s. Es fundamental que revises minuciosamente esta sección. Cualquier investigador/a debería poder generar la/s variable/s y obtener los mismos resultados. Por favor, indica también el programa utilizado (e.g., Stata, R, SPSS, SAS). Es recomendable incluir también una pequeña tabla con los descriptivos principales de esta/s variable/s (i.e., n, frecuencia absoluta y relativa, rango, media…).
+Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s. Es fundamental que revises minuciosamente esta sección. Cualquier investigador/a debería poder generar la/s variable/s y obtener los mismos resultados. Por favor, indica también el programa utilizado (e.g., Stata, R, SPSS, SAS). Es recomendable incluir también una pequeña tabla con los descriptivos principales de esta/s variable/s (i.e., n, frecuencia absoluta y relativa, rango, media...).
 
 <br>
 
@@ -125,11 +124,11 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 
 <!-- TODO: Borrar texto "Otras consideraciones" a continuación -->
 
-- Otras consideraciones:
+-   Otras consideraciones:
 
-  - El número de participantes (n) que debe aparecer en cada base de datos debe ser correspondiente con aquella que aparece en la base de datos maestra u original. Para la base de datos de la muestra completa serán 3000 participantes. En el caso de la muestra pre-confinamiento serán 1935 participantes. 
+    -   El número de participantes (n) que debe aparecer en cada base de datos debe ser correspondiente con aquella que aparece en la base de datos maestra u original. Para la base de datos de la muestra completa serán 3000 participantes. En el caso de la muestra pre-confinamiento serán 1935 participantes.
 
-  - Es recomendable que revises los descriptivos de la/s variable/s generadas. De esta forma podrás detectar posibles errores (e.g., un porcentaje de datos perdidos que no responde a lo esperado; una prevalencia de x patología muy superior o inferior a lo que la evidencia científica señala).
+    -   Es recomendable que revises los descriptivos de la/s variable/s generadas. De esta forma podrás detectar posibles errores (e.g., un porcentaje de datos perdidos que no responde a lo esperado; una prevalencia de x patología muy superior o inferior a lo que la evidencia científica señala).
 
 ```{stata descriptives, collectcode=FALSE}
 * TODO: Añadir estadísticos descriptivos de la(s) variable(s) generada(s)
@@ -137,33 +136,27 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 
 <!-- TODO: Borrar párrafos a continuación -->
 
-- Variable/s de identificación
+-   Variable/s de identificación
 
-Para la cohorte 2019 la variable de identificación es ID. No obstante, con el fin de poder unificar los datos de esta cohorte con aquellos de la cohorte 2011 así como con los datos del subestudio COVID, se ha creado una variable de identificación común: ID_ECS. 
-Así, la variable de identificación que debes incluir para la cohorte 2019 es ID_ECS. En caso que no estuviera en la base de datos maestra, debes saber que esta variable es una réplica de ID.
+Para la cohorte 2019 la variable de identificación es ID. No obstante, con el fin de poder unificar los datos de esta cohorte con aquellos de la cohorte 2011 así como con los datos del subestudio COVID, se ha creado una variable de identificación común: ID_ECS. Así, la variable de identificación que debes incluir para la cohorte 2019 es ID_ECS. En caso que no estuviera en la base de datos maestra, debes saber que esta variable es una réplica de ID.
 
-
-- Variable(s) generada(s)
+-   Variable(s) generada(s)
 
 Debes incluir la variable principal, así como las transformaciones pertinentes asociadas a esta variable. En el caso de que la/s variable/s generada/s que requiera/n la creación previa de otras variables, solo se incluirán aquellas que pueden resultar clave para entender o analizar la variable final. Por ejemplo, si creas una variable a partir de otra existente en la que eliminas casos con datos inválidos o modificas las etiquetas, no es necesario que incluyas esta información en este punto (tampoco en el documento de descripción). Los/as investigadores/as podrán verlo en el algoritmo. En caso que tengas dudas sobre qué variables incluir en este punto, por favor, pregunta a alguno de los/as compañeros responsables del proyecto.
 
+-   Variables de apoyo
 
-- Variables de apoyo
+Puesto que en ocasiones no todos los individuos contactados participan en el estudio (porque no quieren, porque no pueden, porque no los encontramos...) y dado que no todos los participantes responden a todos los ítems, se incluirán las siguientes variables como apoyo para la interpretación de los resultados:
 
-Puesto que en ocasiones no todos los individuos contactados participan en el estudio (porque no quieren, porque no pueden, porque no los encontramos…) y dado que no todos los participantes responden a todos los ítems, se incluirán las siguientes variables como apoyo para la interpretación de los resultados:
+-   Variable estado de entrevista: q0007a_result El código 1 hace referencia a todas las personas que han participado en el estudio.
 
-  - Variable estado de entrevista: q0007a_result
-    El código 1 hace referencia a todas las personas que han participado en el estudio.
-    
-  - Variable proxy: proxy
-    El código 1 hace referencia a los participantes que realizaron una entrevista proxy. Esto quiere decir que el individuo seleccionado no contestó las preguntas, sino que otra persona respondió en su lugar a una versión reducida del cuestionario. El código 2 hace referencia a los participantes que hicieron entrevista directa.
-
+-   Variable proxy: proxy El código 1 hace referencia a los participantes que realizaron una entrevista proxy. Esto quiere decir que el individuo seleccionado no contestó las preguntas, sino que otra persona respondió en su lugar a una versión reducida del cuestionario. El código 2 hace referencia a los participantes que hicieron entrevista directa.
 
 Otras consideraciones:
 
-- Las bases de datos deben tener formato .dta (Stata)
+-   Las bases de datos deben tener formato .dta (Stata)
 
-- El nombre de estos archivos debe tener la siguiente estructura: “Outcome_nombrevariable_particularidad”. Se añadirá cualquier particularidad en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida). 
+-   El nombre de estos archivos debe tener la siguiente estructura: "Outcome_nombrevariable_particularidad". Se añadirá cualquier particularidad en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida).
 
 ```{stata save-data, echo=FALSE}
 * TODO: Sustituir '[variable(s) generada(s)]' por las variables del dataset
@@ -199,7 +192,7 @@ Incluye tu nombre completo, correo electrónico, teléfono e institución a la q
 <!-- TODO: Completar '[Nombre y apellidos]', '[nombre.buzon@institucion.org]', y '[prefijo]' y '[teléfono]' -->
 
 -   Name: [Nombre y apellidos]
--   e-mail: [nombre.buzon\@institucion.org](mailto:[nombre.buzon@institucion.org]){.email}
+-   e-mail: [nombre.buzon\@institucion.org](mailto:%5Bnombre.buzon@institucion.org%5D){.email}
 -   Phone number: (+[prefijo]) [teléfono]
 
 <br>
@@ -209,7 +202,7 @@ Incluye tu nombre completo, correo electrónico, teléfono e institución a la q
 [ Original version:
 
 -   Name: [Nombre y apellidos]
--   e-mail: [nombre.buzon\@institucion.org](mailto:[nombre.buzon@institucion.org]){.email}
+-   e-mail: [nombre.buzon\@institucion.org](mailto:%5Bnombre.buzon@institucion.org%5D){.email}
 -   Phone number: (+[prefijo]) [teléfono] ]
 
 # References
@@ -233,7 +226,7 @@ He terminado de generar la/s variable/s.
 
 Así, el/la compañero/a al que le corresponda podrá examinar los distintos archivos y, sobre todo, el algoritmo. En caso de que se detecten inconsistencias, errores o surjan dudas, se te comunicará para proceder con su revisión.
 
-Finalmente, cuando todas las variables estén generadas y revisadas se creará una base de datos común con todas ellas y los datos sociodemográficos principales de los participantes. 
+Finalmente, cuando todas las variables estén generadas y revisadas se creará una base de datos común con todas ellas y los datos sociodemográficos principales de los participantes.
 
 # Session info
 
