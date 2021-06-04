@@ -9,9 +9,9 @@ csl: "`r ecs.data::get_proj_csl_file()`"
 
 Consideraciones generales:
 
--   Puesto que nuestros datos son analizados por investigadores/as procedentes de distintas partes del mundo, todos los documentos deben estar en inglés.
+-   Puesto que nuestros datos son analizados por investigadores/as procedentes de distintas partes del mundo, **todos los documentos deben estar en inglés**.
 
--   El nombre de este archivo debe tener la siguiente estructura: "Description\_[variable]\_[qualifiers]". En '[qualifiers]' se añadirá cualquier particularidad, en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida).
+-   El **nombre de este archivo** debe tener la siguiente estructura: "Description\_[variable]\_[qualifiers]". En '[qualifiers]' se añadirá cualquier particularidad, en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida).
 
 -   Si se trata de una variable que ya estaba generada en evaluaciones anteriores/otras cohortes, puedes adaptar la información de ese documento. En ese caso, por favor, revisa cuidadosamente que la información contenida se ajusta a las particularidades de los datos.
 
