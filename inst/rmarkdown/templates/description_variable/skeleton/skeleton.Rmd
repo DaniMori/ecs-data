@@ -4,7 +4,11 @@ output:
   word_document:
     reference_docx: !expr ecs.data::get_pkg_docx_template()
 bibliography: "`r ecs.data::get_proj_bib_file()`"
+# bibliography: ../../../../../www/Edad_con_salud_outcome_vars.bib
 csl: "`r ecs.data::get_proj_csl_file()`"
+editor_options: 
+  markdown: 
+    wrap: 80
 ---
 
 Consideraciones generales:
@@ -37,7 +41,7 @@ library(knitr)
 opts_chunk$set(        # Para todos los 'chunks' de código:
   ## TODO: Descomentar si hace falta
   # engine.path = list(stata = STATA_PATH),
-  echo        = TRUE,  #   - Muestra la sintaxis en el documento
+  echo        = FALSE, #   - No muestra la sintaxis en el documento
   results     = 'hide',#   - Omite los resultados de ejecutar la sintaxis
   cleanlog    = TRUE,  #   - Omite repetir sintaxis en resultados de Stata
   collectcode = TRUE   #   - Reutiliza el código de Stata de 'chunks' anteriores
@@ -50,18 +54,20 @@ En esta tabla debes incluir la variable principal, así como las transformacione
 
 <!--# TODO: Borrar párrafo anterior -->
 
-+--------------------+----------------------------+-------------+----------------------+
-| Main variable name | Label                      | Format      | Code                 |
-+:===================+:===========================+:============+:=====================+
-| **[var_name]**     | [Etiqueta]                 | [Formato]   | [Categorías / Rango] |
-+--------------------+----------------------------+-------------+----------------------+
-| **bmi_cont**       | Body mass index continuous | Continuous  | 16-40                |
-+--------------------+----------------------------+-------------+----------------------+
-| **bmi**            | Body mass index categories | Categorical | 1 Underweight;\      |
-|                    |                            |             | 2 Normal weight;\    |
-|                    |                            |             | 3 Overweight;\       |
-|                    |                            |             | 4 Obese              |
-+--------------------+----------------------------+-------------+----------------------+
++--------------------+------------------+-------------+-------------------+
+| Main variable name | Label            | Format      | Code              |
++:===================+:=================+:============+:==================+
+| **[var_name]**     | [Etiqueta]       | [Formato]   | [Categorías /     |
+|                    |                  |             | Rango]            |
++--------------------+------------------+-------------+-------------------+
+| **bmi_cont**       | Body mass index  | Continuous  | 16-40             |
+| **bmi_cont**       | continuous       |             |                   |
++--------------------+------------------+-------------+-------------------+
+| **bmi**            | Body mass index  | Categorical | 1 Underweight;\   |
+|                    | categories       |             | 2 Normal weight;\ |
+|                    |                  |             | 3 Overweight;\    |
+|                    |                  |             | 4 Obese           |
++--------------------+------------------+-------------+-------------------+
 
 <!--# TODO: Añadir variables outcome a la tabla -->
 
@@ -97,7 +103,7 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 
 <br>
 
-```{stata load-data, echo=FALSE}
+```{stata load-data}
 * TODO: Descomentar linea correspondiente a la base de datos maestra a utilizar
 
 * Cohorte 2011, linea base:
@@ -118,7 +124,7 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 * use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Subestudio_COVID\Edad_con_salud_Fichero_Completo.dta"
 ```
 
-```{stata generate-outcomes}
+```{stata generate-outcomes, echo=TRUE}
 * TODO: Escribir aquí la sintaxis de generación de las variables
 ```
 
@@ -130,7 +136,9 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 
 <!--# TODO: Borrar texto "Otras consideraciones" anterior -->
 
-```{stata descriptives, collectcode=FALSE}
+<br>
+
+```{stata descriptives, cleanlog=FALSE, collectcode=FALSE, results='markup'}
 * TODO: Añadir estadísticos descriptivos de la(s) variable(s) generada(s)
 ```
 
@@ -158,13 +166,14 @@ Otras consideraciones:
 
 <!--# TODO: Borrar párrafos anteriores -->
 
-```{stata save-data, echo=FALSE}
+```{stata save-data}
 * TODO: Sustituir '[variable(s) generada(s)]' por las variables del dataset
 keep ID_ECS q0007a_result proxy [variable(s) generada(s)]
 
 
 * TODO: Descomentar linea correspondiente a la cohorte y ola utilizada
 * TODO: Sustituir '[variable]' y '[qualifier]' por los valores correspondientes
+* TODO: Añadir `, replace` al final del comando (si es necesario)
 
 * Cohorte 2011, linea base:
 * save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 1 - Línea base\Outcomes\Outcome datasets\Outcome_[variable]_[qualifier].dta" // TODO: Aviso! El acento en "Línea" puede dar problemas con la ruta del archivo
@@ -176,12 +185,14 @@ keep ID_ECS q0007a_result proxy [variable(s) generada(s)]
 * save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2011\Outcome datasets\Outcome_[variable]_[qualifier].dta"
 
 * Cohorte 2019, linea base:
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Muestra completa\Outcome datasets\Outcome_[variable]_[qualifier].dta"
 * save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Submuestra_1_preconfinamiento\Outcome datasets\Outcome_[variable]_[qualifier].dta"
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Muestra completa\Outcome datasets\Outcome_[variable]_[qualifier].dta"
 
 * Cohorte 2019, ola post-confinamiento:
 * save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Subestudio COVID\Outcomes\Outcome datasets\Outcome_[variable]_[qualifier].dta"
 ```
+
+<br>
 
 # Contact person:
 
@@ -230,6 +241,6 @@ Finalmente, cuando todas las variables estén generadas y revisadas se creará u
 
 # Session info
 
-```{r, results='markup', comment='##'}
+```{r, results='markup'}
 devtools::session_info()
 ```
