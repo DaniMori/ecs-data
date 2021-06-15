@@ -53,13 +53,16 @@ En esta tabla debes incluir la variable principal, así como las transformacione
 +---------------------------+----------------------------+-------------+----------------------+
 | Main variable name        | Label                      | Format      | Code                 |
 +:==========================+:===========================+:============+:=====================+
-| **<var_name>**            | <Etiqueta>                 | <Formato>   | <Categorías / Rango> |
+| <var_name>                | <Etiqueta>                 | <Formato>   | <Categorías / Rango> |
 +---------------------------+----------------------------+-------------+----------------------+
 | **bmi_cont** **bmi_cont** | Body mass index continuous | Continuous  | 16-40                |
 +---------------------------+----------------------------+-------------+----------------------+
-| **bmi**                   | Body mass index categories | Categorical | 1 Underweight;\      |
-|                           |                            |             | 2 Normal weight;\    |
-|                           |                            |             | 3 Overweight;\       |
+| **bmi**                   | Body mass index categories | Categorical | 1 Underweight;       |
+|                           |                            |             |                      |
+|                           |                            |             | 2 Normal weight;     |
+|                           |                            |             |                      |
+|                           |                            |             | 3 Overweight;        |
+|                           |                            |             |                      |
 |                           |                            |             | 4 Obese              |
 +---------------------------+----------------------------+-------------+----------------------+
 
