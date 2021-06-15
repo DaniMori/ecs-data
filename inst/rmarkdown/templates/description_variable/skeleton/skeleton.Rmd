@@ -6,7 +6,7 @@ output:
 bibliography: "`r ecs.data::get_proj_bib_file()`"
 # bibliography: ../../../../../www/Edad_con_salud_outcome_vars.bib
 csl: "`r ecs.data::get_proj_csl_file()`"
-nocite: '@<cita_1>', '@<cita_2>' ## TODO: Añadir cita(s) o borrar campo
+# nocite: '@<cita_1>', '@<cita_2>' ## TODO: Descomentar y añadir cita(s) o borrar campo
 ---
 
 Consideraciones generales:
