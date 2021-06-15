@@ -1,6 +1,6 @@
 PKG_NAME <- ecs.data:::.packageName
 
-R_VERSION <- "4.0.5"
+R_VERSION <- "4.1.0"
 
 STATAMARKDOWN_URL <- "hemken/Statamarkdown"
 
