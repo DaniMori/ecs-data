@@ -1,5 +1,5 @@
 ---
-title: "Edad con Salud -- cohort [cohort] -- [assessment] -- '[variable name(s)/domain]'" ## TODO: Añadir "cohort", "assessment" y "variable name(s)/domain"
+title: "Edad con Salud -- cohort <cohort> -- <assessment> -- '<variable name(s)/domain>'" ## TODO: Añadir "cohort", "assessment" y "variable name(s)/domain"
 output:
   word_document:
     reference_docx: !expr ecs.data::get_pkg_docx_template()
@@ -15,7 +15,7 @@ Consideraciones generales:
 
 -   Puesto que nuestros datos son analizados por investigadores/as procedentes de distintas partes del mundo, **todos los documentos deben estar en inglés**.
 
--   El **nombre de este archivo** debe tener la siguiente estructura: "Description\_[variable]\_[qualifiers]". En '[qualifiers]' se añadirá cualquier particularidad, en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida).
+-   El **nombre de este archivo** debe tener la siguiente estructura: "Description\_<variable>\_<qualifiers>". En '<qualifiers>' se añadirá cualquier particularidad, en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida).
 
 -   Si se trata de una variable que ya estaba generada en evaluaciones anteriores/otras cohortes, puedes adaptar la información de ese documento. En ese caso, por favor, revisa cuidadosamente que la información contenida se ajusta a las particularidades de los datos.
 
@@ -30,10 +30,10 @@ library(knitr)
 
 # Ruta al ejecutable de Stata (Ejecuta `sysdir` en Stata para encontrar la ruta)
 
-## TODO: sustituir '[path\to\]' por la ubicación de Stata
+## TODO: sustituir '<path\to\>' por la ubicación de Stata
 ##       (ejecutar `sysdir` en Stata) y descomentar línea 34,
 ##       o eliminar linea 34:
-# STATA_PATH <- r"([path\to\]StataSE-64.exe)"
+# STATA_PATH <- r"(<path\to\>StataSE-64.exe)"
 
 
 # Opciones de configuración de las salidas de R y Stata:
@@ -167,29 +167,29 @@ Otras consideraciones:
 <!--# TODO: Borrar párrafos anteriores -->
 
 ```{stata save-data}
-* TODO: Sustituir '[variable(s) generada(s)]' por las variables del dataset
-keep ID_ECS q0007a_result proxy [variable(s) generada(s)]
+* TODO: Sustituir '<variable(s) generada(s)>' por las variables del dataset
+keep ID_ECS q0007a_result proxy <variable(s) generada(s)>
 
 
 * TODO: Descomentar linea correspondiente a la cohorte y ola utilizada
-* TODO: Sustituir '[variable]' y '[qualifier]' por los valores correspondientes
+* TODO: Sustituir '<variable>' y '<qualifier>' por los valores correspondientes
 * TODO: Añadir `, replace` al final del comando (si es necesario)
 
 * Cohorte 2011, linea base:
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 1 - Línea base\Outcomes\Outcome datasets\Outcome_[variable]_[qualifier].dta" // TODO: Aviso! El acento en "Línea" puede dar problemas con la ruta del archivo
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 1 - Línea base\Outcomes\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace // TODO: Aviso! El acento en "Línea" puede dar problemas con la ruta del archivo
 
 * Cohorte 2011, ola 2:
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 2\Outcomes\Outcome datasets\Outcome_[variable]_[qualifier].dta"
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 2\Outcomes\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
 
 * Cohorte 2011, ola 3:
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2011\Outcome datasets\Outcome_[variable]_[qualifier].dta"
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2011\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
 
 * Cohorte 2019, linea base:
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Submuestra_1_preconfinamiento\Outcome datasets\Outcome_[variable]_[qualifier].dta"
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Muestra completa\Outcome datasets\Outcome_[variable]_[qualifier].dta"
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Submuestra_1_preconfinamiento\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Muestra completa\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
 
 * Cohorte 2019, ola post-confinamiento:
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Subestudio COVID\Outcomes\Outcome datasets\Outcome_[variable]_[qualifier].dta"
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Subestudio COVID\Outcomes\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
 ```
 
 <br>
@@ -200,21 +200,21 @@ Incluye tu nombre completo, correo electrónico, teléfono e institución a la q
 
 <!--# TODO: Borrar párrafo anterior -->
 
-<!--# TODO: Completar '[Nombre y apellidos]', '[nombre.buzon@institucion.org]', y '[prefijo]' y '[teléfono]' -->
+<!--# TODO: Completar '<Nombre y apellidos>', '<nombre.buzon@institucion.org>', y '<prefijo>' y '<teléfono>' -->
 
--   Name: [Nombre y apellidos]
--   e-mail: [nombre.buzon\@institucion.org](mailto:%5Bnombre.buzon@institucion.org%5D){.email}
--   Phone number: (+[prefijo]) [teléfono]
+-   Name: <Nombre y apellidos>
+-   e-mail: [nombre.buzon\@institucion.org](mailto:<nombre.buzon@institucion.org>){.email}
+-   Phone number: (+<prefijo>) <teléfono>
 
 <br>
 
 <!--# TODO: Completar / eliminar "original version" según corresponda -->
 
-[ Original version:
+< Original version:
 
--   Name: [Nombre y apellidos]
--   e-mail: [nombre.buzon\@institucion.org](mailto:%5Bnombre.buzon@institucion.org%5D){.email}
--   Phone number: (+[prefijo]) [teléfono] ]
+-   Name: <Nombre y apellidos>
+-   e-mail: [nombre.buzon\@institucion.org](mailto:<nombre.buzon@institucion.org>){.email}
+-   Phone number: (+<prefijo>) <teléfono> >
 
 # References
 
