@@ -52,20 +52,18 @@ En esta tabla debes incluir la variable principal, así como las transformacione
 
 <!--# TODO: Borrar párrafo anterior -->
 
-+--------------------+------------------+-------------+-------------------+
-| Main variable name | Label            | Format      | Code              |
-+:===================+:=================+:============+:==================+
-| **[var_name]**     | [Etiqueta]       | [Formato]   | [Categorías /     |
-|                    |                  |             | Rango]            |
-+--------------------+------------------+-------------+-------------------+
-| **bmi_cont**       | Body mass index  | Continuous  | 16-40             |
-| **bmi_cont**       | continuous       |             |                   |
-+--------------------+------------------+-------------+-------------------+
-| **bmi**            | Body mass index  | Categorical | 1 Underweight;\   |
-|                    | categories       |             | 2 Normal weight;\ |
-|                    |                  |             | 3 Overweight;\    |
-|                    |                  |             | 4 Obese           |
-+--------------------+------------------+-------------+-------------------+
++---------------------------+----------------------------+-------------+----------------------+
+| Main variable name        | Label                      | Format      | Code                 |
++:==========================+:===========================+:============+:=====================+
+| **<var_name>**            | <Etiqueta>                 | <Formato>   | <Categorías / Rango> |
++---------------------------+----------------------------+-------------+----------------------+
+| **bmi_cont** **bmi_cont** | Body mass index continuous | Continuous  | 16-40                |
++---------------------------+----------------------------+-------------+----------------------+
+| **bmi**                   | Body mass index categories | Categorical | 1 Underweight;\      |
+|                           |                            |             | 2 Normal weight;\    |
+|                           |                            |             | 3 Overweight;\       |
+|                           |                            |             | 4 Obese              |
++---------------------------+----------------------------+-------------+----------------------+
 
 <!--# TODO: Añadir variables outcome a la tabla -->
 
