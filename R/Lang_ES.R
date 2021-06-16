@@ -16,9 +16,9 @@ NO_DB_FOLDER_SELECTED <-
 NO_DOC_FOLDER_SELECTED <-
   "\nNo se ha seleccionado ninguna carpeta de 'Documentacion'"
 DB_FOLDER_SELECTED <-
-  "\nSeleccionada como carpeta de 'Bases de Datos maestras' la ruta:\n\t{db_dir}"
+  "\n\nSeleccionada como carpeta de 'Bases de Datos maestras' la ruta:\n{db_dir}"
 DOC_FOLDER_SELECTED <-
-  "\nSeleccionada como carpeta de 'Documentación' la ruta:\n\t{doc_dir}"
+  "\n\nSeleccionada como carpeta de 'Documentación' la ruta:\n{doc_dir}"
 CONFIG_FOLDER_ERROR <-
   "\nError al escribir las carpetas de proyecto en el archivo de configuración."
 RUN_CONFIG_FOLDER_ERROR <-
@@ -36,7 +36,7 @@ NO_OUTPUT_FILE_SELECTED <-
 R_VERSION_CHECK <- "Comprobando version de R"
 
 R_VERSION_OLD <- paste(
-  "\nTu versión de R es {r_version};",
+  "\n\nTu versión de R es {r_version};",
   "se recomienda actualizar a la versión {R_VERSION} o posterior"
 )
 
@@ -101,7 +101,7 @@ STATAMARKDOWN_INSTALL_ERROR <- paste(
   "https://www.ssc.wisc.edu/~hemken/Stataworkshops/Statamarkdown/installing-statamarkdown.html"
 )
 
-STATA_FOUND <- "\nInstalación de Stata encontrada en '{stata_path}'"
+STATA_FOUND <- "\n\nInstalación de Stata encontrada en '{stata_path}'"
 
 STATA_NOT_FOUND <- paste(
   "\nNo se ha encontrado una instalación de Stata en tu ordenador.",
