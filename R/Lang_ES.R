@@ -1,4 +1,4 @@
-CHECK_DEPENDENCIES <- "Comprobando e instalando paquetes necesarios"
+CHECK_DEPENDENCIES <- "\nComprobando e instalando paquetes necesarios"
 
 CONFIGURATION_MSG  <- "Se va a configurar el paquete 'ecs.data'"
 CONFIGURATION_DIRS <- "Selecciona la ubicacion de las carpetas de Edad con Salud"
@@ -7,24 +7,24 @@ CONFIGURATION_WARN <-
   "Hubo problemas durante la configuraciOn del paquete 'ecs.data'"
 
 
-CONFIGURING_FOLDERS <- "Configurando carpetas de proyecto de 'Edad con Salud'"
-SELECT_DB_FOLDER    <- "Selecciona la carpeta de 'Bases de Datos maestras'"
-SELECT_DOC_FOLDER   <- "Selecciona la carpeta de 'Documentacion'"
+CONFIGURING_FOLDERS <- "\nConfigurando carpetas de proyecto de 'Edad con Salud'"
+SELECT_DB_FOLDER    <- "\nSelecciona la carpeta de 'Bases de Datos maestras'"
+SELECT_DOC_FOLDER   <- "\nSelecciona la carpeta de 'Documentacion'"
 
 NO_DB_FOLDER_SELECTED <-
-  "No se ha seleccionado ninguna carpeta de 'Bases de Datos maestras'"
+  "\nNo se ha seleccionado ninguna carpeta de 'Bases de Datos maestras'"
 NO_DOC_FOLDER_SELECTED <-
-  "No se ha seleccionado ninguna carpeta de 'Documentacion'"
+  "\nNo se ha seleccionado ninguna carpeta de 'Documentacion'"
 DB_FOLDER_SELECTED <-
-  "Seleccionada como carpeta de 'Bases de Datos maestras' la ruta:\n\t{db_dir}"
+  "\nSeleccionada como carpeta de 'Bases de Datos maestras' la ruta:\n\t{db_dir}"
 DOC_FOLDER_SELECTED <-
-  "Seleccionada como carpeta de 'Documentación' la ruta:\n\t{doc_dir}"
+  "\nSeleccionada como carpeta de 'Documentación' la ruta:\n\t{doc_dir}"
 CONFIG_FOLDER_ERROR <-
-  "Error al escribir las carpetas de proyecto en el archivo de configuración."
+  "\nError al escribir las carpetas de proyecto en el archivo de configuración."
 RUN_CONFIG_FOLDER_ERROR <-
-  "Ejecución de `config_ecs_folders()` falló; ejecútala manualmente."
+  "\nEjecución de `config_ecs_folders()` falló; ejecútala manualmente."
 CONFIG_FILE_NOT_SET <-
-  "Configuración pendiente de ejecutar; ejecuta `config_ecs_folders()`."
+  "\nConfiguración pendiente de ejecutar; ejecuta `config_ecs_folders()`."
 
 
 NO_INPUT_FILE_SELECTED <-
@@ -36,7 +36,7 @@ NO_OUTPUT_FILE_SELECTED <-
 R_VERSION_CHECK <- "Comprobando version de R"
 
 R_VERSION_OLD <- paste(
-  "Tu versión de R es {r_version};",
+  "\nTu versión de R es {r_version};",
   "se recomienda actualizar a la versión {R_VERSION} o posterior"
 )
 
@@ -95,16 +95,16 @@ STATAMARKDOWN_INSTALL <- paste(
 )
 
 STATAMARKDOWN_INSTALL_ERROR <- paste(
-  "No se ha podido instalar el paquete `Statamarkdown`;",
+  "\nNo se ha podido instalar el paquete `Statamarkdown`;",
   "intenta instalarlo manualmente.\n",
   "Más información en:\n",
   "https://www.ssc.wisc.edu/~hemken/Stataworkshops/Statamarkdown/installing-statamarkdown.html"
 )
 
-STATA_FOUND <- "Instalación de Stata encontrada en '{stata_path}'"
+STATA_FOUND <- "\nInstalación de Stata encontrada en '{stata_path}'"
 
 STATA_NOT_FOUND <- paste(
-  "No se ha encontrado una instalación de Stata en tu ordenador.",
+  "\nNo se ha encontrado una instalación de Stata en tu ordenador.",
   "",
   "Sigue los siguientes pasos:",
   "",
