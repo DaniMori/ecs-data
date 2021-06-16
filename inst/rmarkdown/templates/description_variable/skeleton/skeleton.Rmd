@@ -34,7 +34,7 @@ library(Statamarkdown)
 
 # Opciones de configuración de las salidas de R y Stata:
 
-knitr::opts_chunk$set(        # Para todos los 'chunks' de código:
+knitr::opts_chunk$set( # Para todos los 'chunks' de código:
   ## TODO: Descomentar si hace falta
   # engine.path = list(stata = STATA_PATH),
   echo        = FALSE, #   - No muestra la sintaxis en el documento
