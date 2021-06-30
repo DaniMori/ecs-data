@@ -28,6 +28,7 @@ USER_HOME_DIR       <- '~'
 ONEDRIVE_SHARED_SEP <- ' - '
 DIR_SEP             <- '/'
 FILE_EXT_SEP        <- '.'
+EMPTY_FILE_NAME     <- '.'
 
 
 DEFAULT_ECS_MAIN_PATH <- file.path(USER_HOME_DIR, "..", "UAM")

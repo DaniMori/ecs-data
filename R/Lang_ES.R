@@ -44,6 +44,7 @@ R_VERSION_OLD <- paste(
 SELECT_LABEL          <- "OK"
 BROWSE_BUTTON_TEXT    <- "Buscar..."
 DOC_PATH_PLACEHOLDER  <- "Selecciona carpeta o documento(s) a procesar"
+FILE_PATH_PLACEHOLDER <- "Selecciona archivo"
 DOC_S                 <- "Documento(s)"
 FOLDER                <- "Carpeta"
 USE                   <- "Usar:"
@@ -79,6 +80,9 @@ RMARKDOWN_FILES <- "Archivos Rmarkdown"
 
 SPSS_FILE  <- "Archivo de SPSS"
 STATA_FILE <- "Archivo de Stata"
+
+SPSS_FILE_TO_CONVERT <- paste(SPSS_FILE, "a convertir:")
+STATA_FILE_TO_CREATE <- paste(STATA_FILE, "a generar:")
 
 
 SPSS_TO_STATA_TITLE             <- "SPSS a Stata"
