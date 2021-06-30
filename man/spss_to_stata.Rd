@@ -2,23 +2,17 @@
 % Please edit documentation in R/spss_to_stata.R
 \name{spss_to_stata}
 \alias{spss_to_stata}
-\title{Transforma un archivo de datos de SPSS a formato Stata}
+\title{Interfaz gráfico para transformar un archivo de datos de SPSS a formato Stata}
 \usage{
 spss_to_stata()
 }
-\value{
-`TRUE` (invisible) si el archivo se ha guardado correctamente
-        en formato Stata.
-        `FALSE` (invisible) si el usuario cancela la selección de alguno
-        de los dos archivos
-}
 \description{
-Transforma un archivo de datos de SPSS a formato Stata
+Interfaz gráfico para transformar un archivo de datos de SPSS a formato Stata
 }
 \details{
 Puede dar algún fallo no controlado
          (no se ha probado con muchos casos de uso)
 }
 \examples{
-spss_to_stata()
+ecs.data:::pss_to_stata()
 }

@@ -1,54 +1,109 @@
-#' Transforma un archivo de datos de SPSS a formato Stata
+#' Interfaz gráfico para transformar un archivo de datos de SPSS a formato Stata
 #'
-#' @return `TRUE` (invisible) si el archivo se ha guardado correctamente
-#'         en formato Stata.
-#'         `FALSE` (invisible) si el usuario cancela la selección de alguno
-#'         de los dos archivos
+#' @return NULL
 #'
 #' @details Puede dar algún fallo no controlado
 #'          (no se ha probado con muchos casos de uso)
-#' @export
 #'
-#' @importFrom assertive.strings is_an_empty_string
-#' @importFrom rstudioapi        selectFile
-#' @importFrom tools             file_ext
+#' @importFrom miniUI    miniPage gadgetTitleBar miniContentPanel
+#' @importFrom htmltools hr
+#' @importFrom shiny     dialogViewer observeEvent reactiveValues renderText
+#'                       runGadget    stopApp
+#' @importFrom tools     file_path_sans_ext
 #'
-#' @examples spss_to_stata()
+#' @examples ecs.data:::pss_to_stata()
 spss_to_stata <- function() {
 
-  input_file <- rstudioapi::selectFile(
-    caption = SELECT_SPSS_FILE,
-    label   = SELECT_LABEL,
-    path    = USER_HOME_DIR,
-    filter  = create_glob(SPSS_FILES, SPSS_EXT)
+  INPUT_PATH_ID  <- "input_file"
+  OUTPUT_PATH_ID <- "output_file"
+
+  ui <- miniUI::miniPage(
+
+    miniUI::gadgetTitleBar(TRANSFORM_SPPS_TO_STATA_CAPTION),
+
+    miniUI::miniContentPanel(
+
+      filePathInput(INPUT_PATH_ID, label = SPSS_FILE_TO_CONVERT),
+
+      htmltools::hr(),
+
+      filePathInput(OUTPUT_PATH_ID, label = STATA_FILE_TO_CREATE)
+    )
   )
 
-  if (is.null(input_file)) {
+  server <- function(input, output, session) {
 
-    warning(NO_INPUT_FILE_SELECTED)
-    return(invisible(FALSE))
+    values <- shiny::reactiveValues(file_out = NULL)
+
+    # Listen for 'done' events. When we're finished, we'll stop the gadget.
+    shiny::observeEvent(
+      input$done,
+      {
+        file_in <- file_input()
+
+        if (is.null(file_in)) {
+
+          message(NO_INPUT_FILE_SELECTED)
+          return(NULL)
+        }
+        if (is.null(values$file_out)) {
+
+          message(NO_OUTPUT_FILE_SELECTED)
+          return(NULL)
+        }
+
+        convert_spss_to_stata(file_in, values$file_out)
+        shiny::stopApp()
+      }
+    )
+
+    shiny::observeEvent(input$cancel, shiny::stopApp())
+
+    file_input <- filePathConnection(
+      input,
+      output,
+      session,
+      INPUT_PATH_ID,
+      file_caption = SELECT_SPSS_FILE,
+      multiple     = FALSE,
+      filters      = create_file_filters(SPSS_FILE, SPSS_EXT)
+    )
+
+    file_output <- filePathConnection(
+      input,
+      output,
+      session,
+      OUTPUT_PATH_ID,
+      file_caption = SELECT_STATA_FILE,
+      multiple     = FALSE,
+      must_exist   = FALSE,
+      filters      = create_file_filters(STATA_FILE, STATA_EXT)
+    )
+
+    shiny::observeEvent(
+      input[[OUTPUT_PATH_ID]],
+      values$file_out <- file_output()
+    )
+
+    shiny::observeEvent(
+      input[[INPUT_PATH_ID]],
+      {
+        file_in <- file_input()
+
+        if (is.null(file_in)) return(NULL)
+
+        values$file_out <- paste(
+          tools::file_path_sans_ext(file_in),
+          STATA_EXT,
+          sep = FILE_EXT_SEP
+        )
+
+        output[[text_id(OUTPUT_PATH_ID)]] <- shiny::renderText(values$file_out)
+      }
+    )
   }
 
-  input_dir <- dirname(input_file)
+  viewer <- shiny::dialogViewer(SPSS_TO_STATA_TITLE, height = 250)
 
-  output_file <- rstudioapi::selectFile(
-    caption  = SELECT_STATA_FILE,
-    label    = SELECT_LABEL,
-    path     = input_dir,
-    filter   = create_glob(STATA_FILES, STATA_EXT),
-    existing = FALSE
-  )
-
-  if (is.null(output_file)) {
-
-    warning(NO_OUTPUT_FILE_SELECTED)
-    return(invisible(FALSE))
-  }
-
-  if (assertive.strings::is_an_empty_string(tools::file_ext(output_file))) {
-
-    output_file <- paste(output_file, STATA_EXT, sep = FILE_EXT_SEP)
-  }
-
-  convert_spss_to_stata(input_file, output_file)
+  shiny::runGadget(ui, server, viewer = viewer, stopOnCancel = FALSE)
 }
