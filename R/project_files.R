@@ -10,8 +10,6 @@
 #' @export
 #'
 #' @importFrom rstudioapi getActiveProject
-#'
-#' @examples
 get_projectfile_path <- function(file,
                                  where     = c("project", "package"),
                                  proj_path = rstudioapi::getActiveProject()) {
