@@ -12,7 +12,6 @@ PATH_TYPE_OPTIONS <- c(CHOICE_DOC, CHOICE_FOLDER)
 #' @importFrom shiny     actionButton checkboxInput radioButtons
 pathInput <- function(input_id,
                       label,
-                      multiple      = TRUE,
                       radio_title   = USE,
                       choice_labels = c(DOC_S, FOLDER),
                       width         = "100%",
@@ -64,6 +63,7 @@ pathConnection <- function(input,
                            output,
                            session,
                            input_id,
+                           multiple       = TRUE,
                            file_caption   = SELECT_DOCUMENT_S,
                            folder_caption = SELECT_FOLDER,
                            button_label   = SELECT_LABEL,
@@ -105,6 +105,7 @@ pathConnection <- function(input,
           paths <- utils::choose.files(
             default = file.path(path_ini, "*.*"),
             caption = file_caption,
+            multi   = multiple,
             filters = filters
           )
           if (assertive.properties::is_empty(paths)) return(current_paths)
@@ -127,8 +128,3 @@ pathConnection <- function(input,
     list(paths = select_path(), recursive = input[[checkbox_id(input_id)]])
   )
 }
-
-path_type_id <- function(id) paste(id, PATH_TYPE_SUFFIX, sep = SUFFIX_SEP)
-label_id     <- function(id) paste(id, LABEL_SUFFIX,     sep = SUFFIX_SEP)
-text_id      <- function(id) paste(id, TEXT_SUFFIX,      sep = SUFFIX_SEP)
-checkbox_id  <- function(id) paste(id, CHECKBOX_SUFFIX,  sep = SUFFIX_SEP)
