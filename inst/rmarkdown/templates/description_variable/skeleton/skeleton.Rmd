@@ -228,7 +228,12 @@ He terminado de generar la/s variable/s.
 
 ¡Maravilloso, enhorabuena! Cuando hayas terminado de generar la/s variable/s, por favor, actualiza el documento
 
-    PENDIENTE ubicado en PENDIENTE
+    “Creación y revisión de variables_reparto y control
+    ubicado en
+    `Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Creación y revisión de variables_reparto y control.docx`*
+    
+*Este documento hace referencia exclusiva a las variables de cohorte 2019.
+
 
 Así, el/la compañero/a al que le corresponda podrá examinar los distintos archivos y, sobre todo, el algoritmo. En caso de que se detecten inconsistencias, errores o surjan dudas, se te comunicará para proceder con su revisión.
 
