@@ -53,7 +53,7 @@ En esta tabla debes incluir la variable principal, así como las transformacione
 <!--# TODO: Borrar párrafo anterior -->
 
 +---------------------------+----------------------------+-------------+----------------------+
-| Main variable name        | Label                      | Format      | Code                 |
+| **Main variable name**    | **Label**                  | **Format**  | **Code**             |
 +:==========================+:===========================+:============+:=====================+
 | <var_name>                | <Etiqueta>                 | <Formato>   | <Categorías / Rango> |
 +---------------------------+----------------------------+-------------+----------------------+
