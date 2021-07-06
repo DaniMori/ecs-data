@@ -9,7 +9,7 @@ Para instalar el paquete se puede usar el script de autoinstalación
 Para ello, ejecutar el siguiente comando en la consola de R:
 
 ```<R>
-https://raw.githubusercontent.com/CCOMS-UAM/ecs-data/main/src/auto_install.R
+source("https://raw.githubusercontent.com/CCOMS-UAM/ecs-data/main/src/auto_install.R")
 ```
 
 Este script instala las dependencias necesarias y después instala y
