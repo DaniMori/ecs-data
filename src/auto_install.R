@@ -15,16 +15,9 @@
 
 if (!require(devtools, quietly = TRUE)) install.packages("devtools")
 
-if (!require(Statamarkdown, quietly = TRUE)) {
+devtools::install_github("hemken/Statamarkdown")
 
-  devtools::install_github("hemken/Statamarkdown")
-}
-
-
-if (!require(ecs.data, quietly = TRUE)) {
-
-  devtools::install_github("CCOMS-UAM/ecs-data")
-}
+devtools::install_github("CCOMS-UAM/ecs-data")
 
 ecs.data::configure_ecs(
   check_R_version = TRUE,
