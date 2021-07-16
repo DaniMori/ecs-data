@@ -52,21 +52,23 @@ En esta tabla debes incluir la variable principal, así como las transformacione
 
 <!--# TODO: Borrar párrafo anterior -->
 
-+---------------------------+----------------------------+-------------+----------------------+
-| **Main variable name**    | **Label**                  | **Format**  | **Code**             |
-+:==========================+:===========================+:============+:=====================+
-| <var_name>                | <Etiqueta>                 | <Formato>   | <Categorías / Rango> |
-+---------------------------+----------------------------+-------------+----------------------+
-| **bmi_cont** **bmi_cont** | Body mass index continuous | Continuous  | 16-40                |
-+---------------------------+----------------------------+-------------+----------------------+
-| **bmi**                   | Body mass index categories | Categorical | 1 Underweight;       |
-|                           |                            |             |                      |
-|                           |                            |             | 2 Normal weight;     |
-|                           |                            |             |                      |
-|                           |                            |             | 3 Overweight;        |
-|                           |                            |             |                      |
-|                           |                            |             | 4 Obese              |
-+---------------------------+----------------------------+-------------+----------------------+
++--------------------+--------------------------------+-------------+----------------------+
+| Main variable name | Label                          | Format      | Code                 |
++:===================+:===============================+:============+:=====================+
+| <var_name>         | <Etiqueta>                     | <Formato>   | <Categorías / Rango> |
++--------------------+--------------------------------+-------------+----------------------+
+| bmi_cont           | Body mass index continuous     | Continuous  | 16-40                |
++--------------------+--------------------------------+-------------+----------------------+
+| bmi_cont_std       | Body mass index (standardized) | Continuous  | standardized         |
++--------------------+--------------------------------+-------------+----------------------+
+| bmi                | Body mass index categories     | Categorical | 1 Underweight;       |
+|                    |                                |             |                      |
+|                    |                                |             | 2 Normal weight;     |
+|                    |                                |             |                      |
+|                    |                                |             | 3 Overweight;        |
+|                    |                                |             |                      |
+|                    |                                |             | 4 Obese              |
++--------------------+--------------------------------+-------------+----------------------+
 
 <!--# TODO: Añadir variables outcome a la tabla -->
 
@@ -233,9 +235,8 @@ He terminado de generar la/s variable/s.
     “Creación y revisión de variables_reparto y control
     ubicado en
     `Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Creación y revisión de variables_reparto y control.docx`*
-    
-*Este documento hace referencia exclusiva a las variables de cohorte 2019.
 
+\*Este documento hace referencia exclusiva a las variables de cohorte 2019.
 
 Así, el/la compañero/a al que le corresponda podrá examinar los distintos archivos y, sobre todo, el algoritmo. En caso de que se detecten inconsistencias, errores o surjan dudas, se te comunicará para proceder con su revisión.
 
