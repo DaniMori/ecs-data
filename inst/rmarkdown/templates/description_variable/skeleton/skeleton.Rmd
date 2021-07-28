@@ -28,7 +28,7 @@ library(Statamarkdown)
 
 ## TODO: sustituir '<path\to\>' por la ubicación de Stata
 ##       (ejecutar `sysdir` en Stata) y descomentar línea 34,
-##       o eliminar linea 34:
+##       o eliminar siguiente linea:
 # STATA_PATH <- r"(<path\to\>StataSE-64.exe)"
 
 
