@@ -28,11 +28,12 @@ y convenciones del proceso de generación de variables outcome de Edad con Salud
 
 
 <!--# TODO: Leer texto "Consideraciones generales" a continuación -->
-Consideraciones generales:
+
+**Consideraciones generales**
 
 -   Puesto que nuestros datos son analizados por investigadores/as procedentes de distintas partes del mundo, **todos los documentos deben estar en inglés**.
 
--   El **nombre de este archivo** debe tener la siguiente estructura: "Description\_<variable>\_<qualifiers>". En '<qualifiers>' se añadirá cualquier particularidad, en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida).
+-   El **nombre de este archivo** debe tener la siguiente estructura: "Description\_<variablename>\_<qualifiers>". En '<qualifiers>' se añadirá cualquier particularidad, en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida). Por favor, evita en los nombres los espacios (sustituir por "_"), tildes, "ñ" y "Ñ".
 
 -   Si se trata de una variable que ya estaba generada en evaluaciones anteriores/otras cohortes, puedes adaptar la información de ese documento. En ese caso, por favor, revisa cuidadosamente que la información contenida se ajusta a las particularidades de los datos.
 
@@ -67,9 +68,16 @@ knitr::opts_chunk$set( # Para todos los 'chunks' de código:
 
 # Variable information
 
+
+Aquí debes incluir una tabla con los datos principales de todas la/s variable/s finales generada/s. Esto es, el nombre de la/s variable/s (tal y como aparece/n en la base de datos), la/s etiqueta/s, el formato (e.g., categórica, continua) y los valores posibles (e.g., rango para continuas, opciones de respuesta para variables categóricas).
+
 En esta tabla debes incluir la variable principal, así como las transformaciones pertinentes asociadas a esta variable, como ocurre con el ejemplo anterior. En el caso de que la/s variable/s generada/s que requiera/n la creación previa de otras variables, solo se incluirán aquellas que pueden resultar clave para entender o analizar la variable final. Por ejemplo, si creas una variable a partir de otra existente en la que eliminas casos con datos inválidos o modificas las etiquetas, no es necesario que incluyas esta información en este punto (tampoco en la base de datos). Los/as investigadores/as podrán verlo en el algoritmo. En caso que tengas dudas sobre qué variables incluir en este punto, por favor, pregunta a alguno de los/as compañeros responsables del proyecto.
 
-<!--# TODO: Borrar párrafo anterior -->
+En la etiqueta de la/s variable/s generadas, por favor **incluye información acerca de la cohorte y la evaluación de la que se trata**. El patrón es un sufijo como (c<cohorte>_w<ola>), donde <cohorte> puede tomar los valores 2011 o 2019, y <ola> puede tomar los valores: 1, 2, 3, 4, etc. (COVID para el subestudio COVID).
+
+**Ejemplos:** (c2011_w1), (c2019_w3), (c2019_wCOVID). "w1" se correspondería con la primera evaluación (línea base).
+
+<!--# TODO: Borrar párrafos anteriores -->
 
 +--------------------+--------------------------------+-------------+----------------------+
 | Main variable name | Label                          | Format      | Code                 |
@@ -148,9 +156,11 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 * TODO: Escribir aquí la sintaxis de generación de las variables
 ```
 
--   Otras consideraciones:
+<!--# TODO: Leer texto "Otras consideraciones a continuación -->
 
-    -   El número de participantes (n) que debe aparecer en cada base de datos debe ser correspondiente con aquella que aparece en la base de datos maestra u original. Para la base de datos de la muestra completa serán 3000 participantes. En el caso de la muestra pre-confinamiento serán 1935 participantes.
+**Otras consideraciones**
+
+    -   El **número de participantes (n) que debe aparecer en cada base de datos** debe ser correspondiente con aquella que aparece en la base de datos maestra u original. Para la **base de datos de la muestra completa serán 3002 participantes**. En el caso de la **muestra pre-confinamiento serán 1935 participantes**.
 
     -   Es recomendable que revises los descriptivos de la/s variable/s generadas. De esta forma podrás detectar posibles errores (e.g., un porcentaje de datos perdidos que no responde a lo esperado; una prevalencia de x patología muy superior o inferior a lo que la evidencia científica señala).
 
@@ -251,9 +261,9 @@ He terminado de generar la/s variable/s.
 
 ¡Maravilloso, enhorabuena! Cuando hayas terminado de generar la/s variable/s, por favor, actualiza el documento
 
-    “Creación y revisión de variables_reparto y control
+    "Creación y revisión de variables_reparto y control
     ubicado en
-    `Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Creación y revisión de variables_reparto y control.docx`*
+    `Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Creación y revisión de variables_reparto y control.docx`"*
 
 \*Este documento hace referencia exclusiva a las variables de cohorte 2019.
 
