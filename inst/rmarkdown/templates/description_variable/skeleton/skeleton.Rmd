@@ -95,8 +95,6 @@ En la etiqueta de la/s variable/s generadas, por favor **incluye información ac
 
 <!--# TODO: Eliminar ejemplos -->
 
-<br> <!--# Salto de línea (i.e. párrafo vacío); añadir donde se necesite -->
-
 # Variable description
 
 <!--# TODO: Leer párrafo a continuación -->
@@ -128,8 +126,6 @@ Si se trata de variable/s que ya se había/n generado en ocasiones anteriores (e
 Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s. Es fundamental que revises minuciosamente esta sección. Cualquier investigador/a debería poder generar la/s variable/s y obtener los mismos resultados. Por favor, indica también el programa utilizado (e.g., Stata, R, SPSS, SAS), si bien ten en cuenta que el consenso es utilizar el programa Stata. Es recomendable incluir también una pequeña tabla con los descriptivos principales de esta/s variable/s (i.e., n, frecuencia absoluta y relativa, rango, media...).
 
 <!--# TODO: Borrar párrafo anterior -->
-
-<br>
 
 ```{stata load-data}
 * TODO: Descomentar linea correspondiente a la base de datos maestra a utilizar
@@ -166,7 +162,7 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 
 <!--# TODO: Borrar texto "Otras consideraciones" anterior -->
 
-<br>
+<br> <!--# Salto de línea (i.e. párrafo vacío); añadir donde se necesite -->
 
 ```{stata descriptives, cleanlog=FALSE, collectcode=FALSE, results='markup'}
 * TODO: Añadir estadísticos descriptivos de la(s) variable(s) generada(s)
