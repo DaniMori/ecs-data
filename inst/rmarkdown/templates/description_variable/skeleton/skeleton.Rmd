@@ -46,7 +46,7 @@ library(Statamarkdown)
 
 # Opciones de configuración de las salidas de R y Stata:
 
-options(width = 85) # Ancho de salida de texto en R
+options(width = 88) # Ancho de salida de texto en R
 
 knitr::opts_chunk$set( # Para todos los 'chunks' de código:
   ## TODO: Descomentar si hace falta
