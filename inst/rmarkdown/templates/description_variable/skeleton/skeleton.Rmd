@@ -9,6 +9,25 @@ csl: "`r ecs.data::get_proj_csl_file()`"
 # nocite: '@<cita_1>', '@<cita_2>' ## TODO: Descomentar y añadir cita(s) o borrar campo
 ---
 
+<!--# TODO: Leer texto "Aviso preliminar" a continuación -->
+
+**Aviso preliminar**
+
+Esta plantilla está diseñada para la generación de "variables outcome" del
+proyecto Edad con Salud.
+Su objetivo es ayudar a automatizar las tareas de procesamiento de datos del
+proyecto.
+
+Esta plantilla está basada en el documento
+[LÉEME. Pautas para la creación de variables..docx](https://dauam-my.sharepoint.com/:w:/r/personal/marta_miret_uam_es/Documents/Edad%20con%20Salud/Documentacion%20Edad%20con%20Salud/Edad%20con%20salud%20-%20Ola%203/Outcomes/L%C3%89EME.%20Pautas%20para%20la%20creaci%C3%B3n%20de%20variables..docx?d=wb61214c5b3e542638e3af80472f0089c&csf=1&web=1&e=GFJJ2i).
+Sin embargo, **esta plantilla no sustituye a ese documento**.
+Por favor, lee dicho documento para conocer todas las instrucciones
+y convenciones del proceso de generación de variables outcome de Edad con Salud.
+
+<!--# TODO: Borrar texto "Aviso preliminar" más arriba -->
+
+
+<!--# TODO: Leer texto "Consideraciones generales" a continuación -->
 Consideraciones generales:
 
 -   Puesto que nuestros datos son analizados por investigadores/as procedentes de distintas partes del mundo, **todos los documentos deben estar en inglés**.
