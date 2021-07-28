@@ -55,7 +55,7 @@ knitr::opts_chunk$set( # Para todos los 'chunks' de código:
   results     = 'hide',#   - Omite los resultados de ejecutar la sintaxis
   cleanlog    = TRUE,  #   - Omite repetir sintaxis en resultados de Stata
   collectcode = TRUE,  #   - Reutiliza el código de Stata de 'chunks' anteriores
-  comment    = ''      #   - No añade ningún prefijo a los resultados
+  comment     = ''     #   - No añade ningún prefijo a los resultados
 )
 ```
 
