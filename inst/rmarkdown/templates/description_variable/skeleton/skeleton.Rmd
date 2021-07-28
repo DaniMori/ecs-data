@@ -68,6 +68,7 @@ knitr::opts_chunk$set( # Para todos los 'chunks' de código:
 
 # Variable information
 
+<!--# TODO: Leer párrafos a continuación -->
 
 Aquí debes incluir una tabla con los datos principales de todas la/s variable/s finales generada/s. Esto es, el nombre de la/s variable/s (tal y como aparece/n en la base de datos), la/s etiqueta/s, el formato (e.g., categórica, continua) y los valores posibles (e.g., rango para continuas, opciones de respuesta para variables categóricas).
 
@@ -105,6 +106,8 @@ En la etiqueta de la/s variable/s generadas, por favor **incluye información ac
 
 # Variable description
 
+<!--# TODO: Leer párrafo a continuación -->
+
 Por favor, incluye aquí una breve descripción de la variable o constructo que estás trabajando. Qué significa o qué evalúa esa variable y por qué es importante.
 
 <!--# TODO: Borrar párrafo anterior -->
@@ -113,7 +116,9 @@ Por favor, incluye aquí una breve descripción de la variable o constructo que 
 
 # Explanation of how the variables were created
 
-Este apartado es complementario al siguiente. Trata de describir, de forma clara y concisa, cómo has generado la variable. El objetivo de esta sección es doble. Por un lado, que sirva de apoyo para los/as investigadores/as que pudieran no estar familiarizados con el código utilizado para generar la/s variable/s (e.g., R, Stata, SPSS, SAS ). Por otro, facilitar la información suficiente para describir adecuadamente la/s variable/s en los artículos científicos.
+<!--# TODO: Leer párrafos a continuación -->
+
+Este apartado es complementario al siguiente. Trata de describir, de forma clara y concisa, cómo has generado la variable. El objetivo de esta sección es doble. Por un lado, que sirva de apoyo para los/as investigadores/as que pudieran no estar familiarizados con el código utilizado para generar la/s variable/s (e.g., R, Stata, SPSS, SAS). Por otro, facilitar la información suficiente para describir adecuadamente la/s variable/s en los artículos científicos.
 
 Si se trata de variable/s que ya se había/n generado en ocasiones anteriores (e.g., evaluaciones o cohortes distintas), por favor, documenta las potenciales particularidades o modificaciones que realices (e.g., versión reducida, detección de errores).
 
@@ -124,6 +129,8 @@ Si se trata de variable/s que ya se había/n generado en ocasiones anteriores (e
 # Syntax used to create the variable (Stata 15)
 
 <!--# TODO: Cambiar software y versión en el título según correponda a la sintaxis utilizada (e.g., 'R 4.0.5' en lugar de 'Stata 15') -->
+
+<!--# TODO: Leer párrafo a continuación -->
 
 Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s. Es fundamental que revises minuciosamente esta sección. Cualquier investigador/a debería poder generar la/s variable/s y obtener los mismos resultados. Por favor, indica también el programa utilizado (e.g., Stata, R, SPSS, SAS). Es recomendable incluir también una pequeña tabla con los descriptivos principales de esta/s variable/s (i.e., n, frecuencia absoluta y relativa, rango, media...).
 
@@ -171,6 +178,8 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 ```{stata descriptives, cleanlog=FALSE, collectcode=FALSE, results='markup'}
 * TODO: Añadir estadísticos descriptivos de la(s) variable(s) generada(s)
 ```
+
+<!--# TODO: Leer párrafos a continuación -->
 
 -   Variable/s de identificación
 
@@ -226,6 +235,8 @@ keep ID_ECS q0007a_result proxy <variable(s) generada(s)>
 
 # Contact person:
 
+<!--# TODO: Leer párrafo a continuación -->
+
 Incluye tu nombre completo, correo electrónico, teléfono e institución a la que perteneces. Si el algoritmo que has generado ha estado basado en el trabajo que ya había hecho otro/a compañero/a, por favor, indícalo.
 
 <!--# TODO: Borrar párrafo anterior -->
@@ -248,6 +259,8 @@ Incluye tu nombre completo, correo electrónico, teléfono e institución a la q
 
 # References
 
+<!--# TODO: Leer párrafo a continuación -->
+
 Indica las referencias utilizadas para explicar o generar la/s variable/s. Esta información será igualmente útil para citar apropiadamente en nuestros artículos científicos.
 
 <!--# TODO: Borrar párrafo anterior -->
@@ -256,6 +269,9 @@ Indica las referencias utilizadas para explicar o generar la/s variable/s. Esta 
 :::
 
 \newpage
+
+
+<!--# TODO: Leer párrafos a continuación -->
 
 He terminado de generar la/s variable/s.
 
