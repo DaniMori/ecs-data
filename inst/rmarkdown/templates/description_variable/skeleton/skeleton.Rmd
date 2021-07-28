@@ -33,7 +33,7 @@ y convenciones del proceso de generación de variables outcome de Edad con Salud
 
 -   Puesto que nuestros datos son analizados por investigadores/as procedentes de distintas partes del mundo, **todos los documentos deben estar en inglés**.
 
--   El **nombre de este archivo** debe tener la siguiente estructura: "Description\_<variablename>\_<qualifiers>". En '<qualifiers>' se añadirá cualquier particularidad, en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida). Por favor, evita en los nombres los espacios (sustituir por "_"), tildes, "ñ" y "Ñ".
+-   El **nombre de este archivo** debe tener la siguiente estructura: "Description\_<variablename>\_<qualifiers>". En '<qualifiers>' se añadirá cualquier particularidad, en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida). Por favor, evita en los nombres los espacios (sustituir por "_"), tildes, "ñ" y "Ñ". Por ejemplo: "Description_cognitivereserve".
 
 -   Si se trata de una variable que ya estaba generada en evaluaciones anteriores/otras cohortes, puedes adaptar la información de ese documento. En ese caso, por favor, revisa cuidadosamente que la información contenida se ajusta a las particularidades de los datos.
 
@@ -70,7 +70,7 @@ knitr::opts_chunk$set( # Para todos los 'chunks' de código:
 
 <!--# TODO: Leer párrafos a continuación -->
 
-Aquí debes incluir una tabla con los datos principales de todas la/s variable/s finales generada/s. Esto es, el nombre de la/s variable/s (tal y como aparece/n en la base de datos), la/s etiqueta/s, el formato (e.g., categórica, continua) y los valores posibles (e.g., rango para continuas, opciones de respuesta para variables categóricas).
+Aquí debes incluir una tabla con los datos principales de todas la/s variable/s finales generada/s. Esto es, el nombre de la/s variable/s (tal y como aparece/n en la base de datos), la/s etiqueta/s, el formato (discreta, continua, nominal, ordinal, binaria) y los valores posibles (e.g., rango para continuas, opciones de respuesta para variables categóricas).
 
 En esta tabla debes incluir la variable principal, así como las transformaciones pertinentes asociadas a esta variable, como ocurre con el ejemplo anterior. En el caso de que la/s variable/s generada/s que requiera/n la creación previa de otras variables, solo se incluirán aquellas que pueden resultar clave para entender o analizar la variable final. Por ejemplo, si creas una variable a partir de otra existente en la que eliminas casos con datos inválidos o modificas las etiquetas, no es necesario que incluyas esta información en este punto (tampoco en la base de datos). Los/as investigadores/as podrán verlo en el algoritmo. En caso que tengas dudas sobre qué variables incluir en este punto, por favor, pregunta a alguno de los/as compañeros responsables del proyecto.
 
@@ -89,7 +89,7 @@ En la etiqueta de la/s variable/s generadas, por favor **incluye información ac
 +--------------------+--------------------------------+-------------+----------------------+
 | bmi_cont_std       | Body mass index (standardized) | Continuous  | standardized         |
 +--------------------+--------------------------------+-------------+----------------------+
-| bmi                | Body mass index categories     | Categorical | 1 Underweight;       |
+| bmi                | Body mass index categories     | Ordinal     | 1 Underweight;       |
 |                    |                                |             |                      |
 |                    |                                |             | 2 Normal weight;     |
 |                    |                                |             |                      |
@@ -132,7 +132,7 @@ Si se trata de variable/s que ya se había/n generado en ocasiones anteriores (e
 
 <!--# TODO: Leer párrafo a continuación -->
 
-Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s. Es fundamental que revises minuciosamente esta sección. Cualquier investigador/a debería poder generar la/s variable/s y obtener los mismos resultados. Por favor, indica también el programa utilizado (e.g., Stata, R, SPSS, SAS). Es recomendable incluir también una pequeña tabla con los descriptivos principales de esta/s variable/s (i.e., n, frecuencia absoluta y relativa, rango, media...).
+Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s. Es fundamental que revises minuciosamente esta sección. Cualquier investigador/a debería poder generar la/s variable/s y obtener los mismos resultados. Por favor, indica también el programa utilizado (e.g., Stata, R, SPSS, SAS), si bien ten en cuenta que el consenso es utilizar el programa Stata. Es recomendable incluir también una pequeña tabla con los descriptivos principales de esta/s variable/s (i.e., n, frecuencia absoluta y relativa, rango, media...).
 
 <!--# TODO: Borrar párrafo anterior -->
 
@@ -183,7 +183,8 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 
 -   Variable/s de identificación
 
-Para la cohorte 2019 la variable de identificación es ID. No obstante, con el fin de poder unificar los datos de esta cohorte con aquellos de la cohorte 2011 así como con los datos del subestudio COVID, se ha creado una variable de identificación común: ID_ECS. Así, la variable de identificación que debes incluir para la cohorte 2019 es ID_ECS. En caso que no estuviera en la base de datos maestra, debes saber que esta variable es una réplica de ID.
+**La variable de identificación que debes incluir para la cohorte 2019 es ID_ECS**. Para conocer la equivalencia y las particularidades de las distintas variables de identificación, por favor, revisa la tabla 1 en el documento 
+[LÉEME. Pautas para la creación de variables..docx](https://dauam-my.sharepoint.com/:w:/r/personal/marta_miret_uam_es/Documents/Edad%20con%20Salud/Documentacion%20Edad%20con%20Salud/Edad%20con%20salud%20-%20Ola%203/Outcomes/L%C3%89EME.%20Pautas%20para%20la%20creaci%C3%B3n%20de%20variables..docx?d=wb61214c5b3e542638e3af80472f0089c&csf=1&web=1&e=GFJJ2i).
 
 -   Variable(s) generada(s)
 
