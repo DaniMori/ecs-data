@@ -3,6 +3,29 @@ DB_FOLDER_KEY  <- "DB"
 
 PROJECT_FOLDER_KEYS <- c(DB_FOLDER_KEY, DOC_FOLDER_KEY)
 
+
+#' Lee la carpeta de proyecto de "Edad con Salud" (i.e., carpeta
+#' compartida de OneDrive) indicada
+#'
+#' @param folder ("DOC") cadena de caracteres indicando la
+#'        _clave_, es decir, si se desea obtener la ruta a la carpeta de datos
+#'        ("DB") o de documentación ("DOC", por defecto).
+#' @param run_config (`FALSE`) valor lógico indicando si ejecutar la
+#'        configuración de las carpetas, en caso de que el archivo de
+#'        configuración esté vacío. En caso de no ejecutarse la configuración
+#'        (por defecto) si el archivo de configuración está vacío termina con un
+#'        error.
+#'
+#' @return ruta local a la carpeta del  proyecto
+#' @details Devuelve la ruta a la carpeta de OneDrive de Edad con Salud
+#'          seleccionada. La carpeta (_bases de datos_ o _documentación_)
+#'          se selecciona mediante la clave correspondiente en el parámetro
+#'          `folder`.
+#'          Para instrucciones sobre cómo sincronizar las carpetas compartidas,
+#'          ver el
+#'          \href{https://bit.ly/33PJOJe}{Manual de sincronización de OneDrive}.
+#'
+#' @export
 read_ecs_folder <- function(folder = PROJECT_FOLDER_KEYS, run_config = FALSE) {
 
   folder <- match.arg(folder)
