@@ -131,4 +131,4 @@ END_REGEX_SUFFIX   <- '$'
 REGEX_ESCAPE       <- '\\'
 ENDLINE            <- '\n'
 EMPTY_STRING       <- ''
-HORIZONTAL_RULE    <- paste0(rep('-', 74), collapse = EMPTY_STRING)
+HORIZONTAL_RULE    <- paste0(rep('-', 72), collapse = EMPTY_STRING)
