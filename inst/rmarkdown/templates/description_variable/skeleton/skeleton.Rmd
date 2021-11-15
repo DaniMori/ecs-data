@@ -140,9 +140,7 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 * use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Ola_3\Cohorte_2011\FINAL\20190208_PES16028242_Seguimiento_final_completo_V6.dta"
 
 * Cohorte 2019, linea base:
-* use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Ola_3\Cohorte_2019\Muestra completa\PES16028242_MN_Final20210602.dta"
-* use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Ola_3\Cohorte_2019\Submuestra_1_preconfinamiento\Edad con Salud ola 3_cohorte 2019_base completa_Stata14.dta" // Para Stata 14+
-* use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Ola_3\Cohorte_2019\Submuestra_1_preconfinamiento\Edad con Salud ola 3_cohorte 2019_base completa_Stata13.dta" // Para Stata 13+
+* use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Ola_3\Cohorte_2019\rawdata_c2019w1.dta"
 
 * Cohorte 2019, ola post-confinamiento:
 * use "~\UAM\marta.miret@uam.es - Bases de datos maestras Edad con Salud\Subestudio_COVID\Edad_con_salud_Fichero_Completo.dta"
@@ -196,7 +194,8 @@ Otras consideraciones:
 
 ```{stata save-data}
 * TODO: Sustituir '<variable(s) generada(s)>' por las variables del dataset
-keep ID_ECS q0007a_result proxy <variable(s) generada(s)>
+* TODO: Borrar `subsample_pre interview_pre` si no procede (dejar sólo para Cohorte 2019, Ola 1)
+keep ID_ECS q0007a_result proxy subsample_pre interview_pre <variable(s) generada(s)>
 
 
 * TODO: Descomentar linea correspondiente a la cohorte y ola utilizada
@@ -213,8 +212,7 @@ keep ID_ECS q0007a_result proxy <variable(s) generada(s)>
 * save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2011\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
 
 * Cohorte 2019, linea base:
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Submuestra_1_preconfinamiento\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Muestra completa\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
+* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
 
 * Cohorte 2019, ola post-confinamiento:
 * save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Subestudio COVID\Outcomes\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
