@@ -5,7 +5,7 @@ Gestión de datos de Edad con Salud
 ## Instalación
 
 Para instalar el paquete se puede usar el script de autoinstalación
-`src/auto_install.R`.
+`auto_install.R`.
 Para ello, ejecutar el siguiente comando en la consola de R:
 
 ```R
