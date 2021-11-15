@@ -58,3 +58,36 @@ read_config_file <- function() {
     file.type = CONFIG_TYPE
   )
 }
+
+#' @importFrom assertive.types assert_is_a_bool
+get_user_base_dir <- function(normalize = FALSE) {
+
+  ## Argument checking and formatting: ----
+  assertive.types::assert_is_a_bool(normalize)
+
+  ## Main: ----
+  result <- file.path(USER_HOME_DIR, DIR_UP)
+
+  if (normalize) normalizePath(result, winslash = DIR_SEP)
+  else           result
+}
+
+#' @importFrom assertive.types assert_is_a_bool
+get_org_OneDrive_base_dir <- function(normalize = FALSE) {
+
+  ## Argument checking and formatting: ----
+  assertive.types::assert_is_a_bool(normalize)
+
+  ## Main: ----
+  file.path(get_user_base_dir(normalize = normalize), DIR_ONEDRIVE_ORG)
+}
+
+#' @importFrom assertive.types assert_is_a_bool
+get_OneDrive_dir_prefix <- function(normalize = FALSE) {
+
+  ## Argument checking and formatting: ----
+  assertive.types::assert_is_a_bool(normalize)
+
+  ## Main: ----
+  file.path(get_org_OneDrive_base_dir(normalize = normalize), ECS_DIRS_OWNER)
+}

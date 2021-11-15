@@ -25,25 +25,26 @@ CRAN_DEPENDENCIES <- c(
 REMOTE_REPO <- "https://cran.rstudio.com"
 
 USER_HOME_DIR       <- '~'
+DIR_UP              <- '..'
 ONEDRIVE_SHARED_SEP <- ' - '
+DIR_ONEDRIVE_ORG    <- "UAM"
 DIR_SEP             <- '/'
 FILE_EXT_SEP        <- '.'
 EMPTY_FILE_NAME     <- '.'
+ECS_DIRS_OWNER      <- "marta.miret@uam.es"
 
 
-DEFAULT_ECS_MAIN_PATH <- file.path(USER_HOME_DIR, "..", "UAM")
+DEFAULT_ECS_MAIN_PATH <- file.path(USER_HOME_DIR, DIR_UP, DIR_ONEDRIVE_ORG)
 
-ECS_DIRS_OWNER <- "marta.miret@uam.es"
-DEFAULT_DB_DIR <- paste(
-  ECS_DIRS_OWNER,
-  "Bases de datos maestras Edad con Salud",
-  sep = ONEDRIVE_SHARED_SEP
-)
-DEFAULT_DOC_DIR <- paste(
-  ECS_DIRS_OWNER,
-  "Documentacion Edad con Salud",
-  sep = ONEDRIVE_SHARED_SEP
-)
+DB_DIR_ID      <- "Bases de datos maestras"
+DOC_DIR_ID     <- "Documentacion"
+PROJECT_SUFFIX <- "Edad con Salud"
+DB_DIR_NAME    <- paste(DB_DIR_ID,  PROJECT_SUFFIX)
+DOC_DIR_NAME   <- paste(DOC_DIR_ID, PROJECT_SUFFIX)
+
+DEFAULT_DB_DIR  <- paste(ECS_DIRS_OWNER, DB_DIR_NAME,  sep = ONEDRIVE_SHARED_SEP)
+DEFAULT_DOC_DIR <- paste(ECS_DIRS_OWNER, DOC_DIR_NAME, sep = ONEDRIVE_SHARED_SEP)
+
 DEFAULT_DB_PATH  <- file.path(DEFAULT_ECS_MAIN_PATH, DEFAULT_DB_DIR)
 DEFAULT_DOC_PATH <- file.path(DEFAULT_ECS_MAIN_PATH, DEFAULT_DOC_DIR)
 
