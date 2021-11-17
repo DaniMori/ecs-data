@@ -200,22 +200,21 @@ keep ID_ECS q0007a_result proxy subsample_pre interview_pre <variable(s) generad
 
 * TODO: Descomentar linea correspondiente a la cohorte y ola utilizada
 * TODO: Sustituir '<variable>' y '<qualifier>' por los valores correspondientes
-* TODO: Añadir `, replace` al final del comando (si es necesario)
 
-* Cohorte 2011, linea base:
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 1 - Línea base\Outcomes\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace // TODO: Aviso! El acento en "Línea" puede dar problemas con la ruta del archivo
+* Cohorte 2011, ola 1:
+* saveold "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 1 - Línea base\Outcomes\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace version(13) // TODO: Aviso! El acento en "Línea" puede dar problemas con la ruta del archivo
 
 * Cohorte 2011, ola 2:
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 2\Outcomes\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
+* saveold "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 2\Outcomes\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace version(13)
 
 * Cohorte 2011, ola 3:
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2011\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
+* saveold "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2011\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace version(13)
 
-* Cohorte 2019, linea base:
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
+* Cohorte 2019, ola 1:
+* saveold "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace version(13)
 
 * Cohorte 2019, ola post-confinamiento:
-* save "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Subestudio COVID\Outcomes\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace
+* saveold "~\UAM\marta.miret@uam.es - Documentacion Edad con Salud\Edad con salud - Subestudio COVID\Outcomes\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace version(13)
 ```
 
 <br>
