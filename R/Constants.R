@@ -42,8 +42,16 @@ PROJECT_SUFFIX <- "Edad con Salud"
 DB_DIR_NAME    <- paste(DB_DIR_ID,  PROJECT_SUFFIX)
 DOC_DIR_NAME   <- paste(DOC_DIR_ID, PROJECT_SUFFIX)
 
-DEFAULT_DB_DIR  <- paste(ECS_DIRS_OWNER, DB_DIR_NAME,  sep = ONEDRIVE_SHARED_SEP)
-DEFAULT_DOC_DIR <- paste(ECS_DIRS_OWNER, DOC_DIR_NAME, sep = ONEDRIVE_SHARED_SEP)
+DEFAULT_DB_DIR  <- paste(
+  ECS_DIRS_OWNER,
+  DB_DIR_NAME,
+  sep = ONEDRIVE_SHARED_SEP
+)
+DEFAULT_DOC_DIR <- paste(
+  ECS_DIRS_OWNER,
+  DOC_DIR_NAME,
+  sep = ONEDRIVE_SHARED_SEP
+)
 
 DEFAULT_DB_PATH  <- file.path(DEFAULT_ECS_MAIN_PATH, DEFAULT_DB_DIR)
 DEFAULT_DOC_PATH <- file.path(DEFAULT_ECS_MAIN_PATH, DEFAULT_DOC_DIR)
@@ -57,8 +65,6 @@ WAVE_2_DIR        <- "ola_2"
 WAVE_3_DIR        <- "ola_3"
 WAVE_4_DIR        <- "ola_4"
 COVID_SUBS_DIR    <- "post_confinamiento"
-PRE_LOCKDOWN_DIR  <- "submuestra_pre_confinamiento"
-COMPLETE_DIR      <- "muestra_completa"
 RESOURCE_DIR      <- "www"
 
 WORD_TEMPLATE_FILE <- "Description_outcome_vars_template.docx"
@@ -84,8 +90,7 @@ OUTCOME_VARS_FOLDERS <- c(
   file.path(BASE_OUTCOME_FOLDER, COHORT_2011_DIR, WAVE_2_DIR),
   file.path(BASE_OUTCOME_FOLDER, COHORT_2011_DIR, WAVE_3_DIR),
   file.path(BASE_OUTCOME_FOLDER, COHORT_2011_DIR, WAVE_4_DIR),
-  file.path(BASE_OUTCOME_FOLDER, COHORT_2019_DIR, WAVE_1_DIR, PRE_LOCKDOWN_DIR),
-  file.path(BASE_OUTCOME_FOLDER, COHORT_2019_DIR, WAVE_1_DIR, COMPLETE_DIR),
+  file.path(BASE_OUTCOME_FOLDER, COHORT_2019_DIR, WAVE_1_DIR),
   file.path(BASE_OUTCOME_FOLDER, COHORT_2019_DIR, COVID_SUBS_DIR),
   file.path(BASE_OUTCOME_FOLDER, COHORT_2019_DIR, WAVE_2_DIR)
 )
@@ -103,16 +108,9 @@ DIR_OUTPUT <- file.path(
     "Edad con salud - Ola 2/Outcomes",
     "Edad con salud - Ola 3/Outcomes/Cohorte 2011",
     "Edad con salud - Ola 4/Outcomes/Cohorte 2011",
-    file.path(
-      "Edad con salud - Ola 3",
-      "Outcomes/Cohorte 2019/Submuestra_1_preconfinamiento"
-    ),
-    file.path(
-      "Edad con salud - Ola 3",
-      "Outcomes/Cohorte 2019/Muestra completa"
-    ),
+    "Edad con salud - Ola 3/Outcomes/Cohorte 2019",
     "Edad con salud - Subestudio COVID/Outcomes",
-    "Edad con salud - Ola 2/Outcomes/Cohorte 2019"
+    "Edad con salud - Ola 4/Outcomes/Cohorte 2019"
   ),
   DIR_OUTPUT_TERMINAL
 )
