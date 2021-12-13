@@ -1,7 +1,7 @@
 Package: ecs.data
 Type: Package
 Title: Funciones para la gestión de datos del proyecto "Edad con Salud"
-Version: 1.1.0.0
+Version: 1.2.0.0
 Authors@R: person("Daniel", "Morillo", email = "danivmorillo@gmail.com",
                   role = c("aut", "cre"))
 URL: https://github.com/CCOMS-UAM/ecs-data
