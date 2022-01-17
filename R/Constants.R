@@ -6,6 +6,7 @@ STATAMARKDOWN_URL <- "hemken/Statamarkdown"
 
 CRAN_DEPENDENCIES <- c(
   "assertive.properties",
+  "assertive.sets",
   "assertive.strings",
   "configr",
   "devtools",

@@ -1,7 +1,7 @@
 Package: ecs.data
 Type: Package
 Title: Funciones para la gestión de datos del proyecto "Edad con Salud"
-Version: 1.2.1.2
+Version: 1.2.1.3
 Authors@R: person("Daniel", "Morillo", email = "danivmorillo@gmail.com",
                   role = c("aut", "cre"))
 URL: https://github.com/CCOMS-UAM/ecs-data
@@ -11,8 +11,8 @@ Description: Este paquete provee algunas funciones para la gestión de datos
     variables "outcome" a partir de las bases de datos maestras.
 Imports:
     assertive.properties (>= 0.0-4),
-    assertive.strings    (>= 0.0-3),
     assertive.sets       (>= 0.0-3),
+    assertive.strings    (>= 0.0-3),
     configr              (>= 0.3.5),
     devtools             (>= 2.4.1),
     glue                 (>= 1.4.2),
