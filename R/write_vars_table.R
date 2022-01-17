@@ -28,8 +28,9 @@ write_vars_table <- function(variables, style = "grid") {
 
   pander::pandoc.table(
     variables,
-    style   = style,
-    justify = "llll",
+    style            = style,
+    justify          = "llll",
+    split.tables     = Inf,
     keep.line.breaks = TRUE
   )
 }
