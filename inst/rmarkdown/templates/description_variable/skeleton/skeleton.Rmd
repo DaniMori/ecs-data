@@ -39,12 +39,9 @@ Esta plantilla está basada en el documento [LÉEME. Pautas para la creación de
 
 library(Statamarkdown)
 
-# Ruta al ejecutable de Stata (Ejecuta `sysdir` en Stata para encontrar la ruta)
-
-## TODO: sustituir '<path\to\>' por la ubicación de Stata
-##       (ejecutar `sysdir` en Stata) y descomentar línea 34,
-##       o eliminar siguiente linea:
-# STATA_PATH <- r"(<path\to\>StataSE-64.exe)"
+## TODO: sustituir '<path\to\>' por la ubicación de Stata (ejecutar `sysdir` en
+##       Stata) y descomentar línea siguiente, o ELIMINAR LINEA SIGUIENTE:
+# STATA_PATH <- r"(<path\to\>StataSE-64.exe)" # Ruta al ejecutable de Stata
 
 
 # Opciones de configuración de las salidas de R y Stata:
