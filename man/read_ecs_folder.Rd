@@ -3,9 +3,14 @@
 \name{read_ecs_folder}
 \alias{read_ecs_folder}
 \title{Lee la carpeta de proyecto de "Edad con Salud" (i.e., carpeta
-compartida de OneDrive) indicada}
+compartida de OneDrive) indicada y la devuelve como una ruta relativa al
+"HOME" del usuario.}
 \usage{
-read_ecs_folder(folder = PROJECT_FOLDER_KEYS, run_config = FALSE)
+read_ecs_folder(
+  folder = PROJECT_FOLDER_KEYS,
+  run_config = FALSE,
+  rel_stata = FALSE
+)
 }
 \arguments{
 \item{folder}{("DOC") cadena de caracteres indicando la
@@ -17,13 +22,20 @@ configuración de las carpetas, en caso de que el archivo de
 configuración esté vacío. En caso de no ejecutarse la configuración
 (por defecto) si el archivo de configuración está vacío termina con un
 error.}
+
+\item{rel_stata}{(`FALSE`) valor lógico indicando si devolver la ruta
+relativa al "HOME" de usuario entendido según Stata. Windows suele
+considerar el "HOME" como una ruta del tipo
+`C:/Users/<username>/Documents`, mientras que Stata considera el
+"HOME" como `C:/Users/<username>`.}
 }
 \value{
-ruta local a la carpeta del  proyecto
+ruta local a la carpeta del  proyecto, relativa al "HOME" del usuario
 }
 \description{
 Lee la carpeta de proyecto de "Edad con Salud" (i.e., carpeta
-compartida de OneDrive) indicada
+compartida de OneDrive) indicada y la devuelve como una ruta relativa al
+"HOME" del usuario.
 }
 \details{
 Devuelve la ruta a la carpeta de OneDrive de Edad con Salud

@@ -35,6 +35,7 @@ DIR_SEP             <- '/'
 FILE_EXT_SEP        <- '.'
 EMPTY_FILE_NAME     <- '.'
 ECS_DIRS_OWNER      <- "marta.miret@uam.es"
+USER_HOME_STATA     <- file.path(USER_HOME_DIR, DIR_UP)
 
 
 DEFAULT_ECS_MAIN_PATH <- file.path(USER_HOME_DIR, DIR_UP, DIR_ONEDRIVE_ORG)

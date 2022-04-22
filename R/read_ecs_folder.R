@@ -5,7 +5,8 @@ PROJECT_FOLDER_KEYS <- c(DB_FOLDER_KEY, DOC_FOLDER_KEY)
 
 
 #' Lee la carpeta de proyecto de "Edad con Salud" (i.e., carpeta
-#' compartida de OneDrive) indicada
+#' compartida de OneDrive) indicada y la devuelve como una ruta relativa al
+#' "HOME" del usuario.
 #'
 #' @param folder ("DOC") cadena de caracteres indicando la
 #'        _clave_, es decir, si se desea obtener la ruta a la carpeta de datos
@@ -15,8 +16,13 @@ PROJECT_FOLDER_KEYS <- c(DB_FOLDER_KEY, DOC_FOLDER_KEY)
 #'        configuración esté vacío. En caso de no ejecutarse la configuración
 #'        (por defecto) si el archivo de configuración está vacío termina con un
 #'        error.
+#' @param rel_stata (`FALSE`) valor lógico indicando si devolver la ruta
+#'        relativa al "HOME" de usuario entendido según Stata. Windows suele
+#'        considerar el "HOME" como una ruta del tipo
+#'        `C:/Users/<username>/Documents`, mientras que Stata considera el
+#'        "HOME" como `C:/Users/<username>`.
 #'
-#' @return ruta local a la carpeta del  proyecto
+#' @return ruta local a la carpeta del  proyecto, relativa al "HOME" del usuario
 #' @details Devuelve la ruta a la carpeta de OneDrive de Edad con Salud
 #'          seleccionada. La carpeta (_bases de datos_ o _documentación_)
 #'          se selecciona mediante la clave correspondiente en el parámetro
@@ -25,9 +31,12 @@ PROJECT_FOLDER_KEYS <- c(DB_FOLDER_KEY, DOC_FOLDER_KEY)
 #'          ver el
 #'          \href{https://bit.ly/33PJOJe}{Manual de sincronización de OneDrive}.
 #'
+#' @importFrom fs path_rel
+#'
 #' @export
-read_ecs_folder <- function(folder = PROJECT_FOLDER_KEYS, run_config = FALSE) {
-
+read_ecs_folder <- function(folder     = PROJECT_FOLDER_KEYS,
+                            run_config = FALSE,
+                            rel_stata  = FALSE) {
   folder <- match.arg(folder)
 
   config_fields <- read_config_file()
@@ -46,7 +55,13 @@ read_ecs_folder <- function(folder = PROJECT_FOLDER_KEYS, run_config = FALSE) {
     }
   }
 
-  config_fields[[folder]]
+  result <- config_fields[[folder]]
+
+  home_dir <- if (rel_stata) USER_HOME_STATA else USER_HOME_DIR
+
+  start_dir <- path.expand(home_dir)
+
+  file.path(USER_HOME_DIR, fs::path_rel(result, start = start_dir))
 }
 
 
