@@ -3,7 +3,7 @@ title: "Edad con Salud -- cohort <cohort> -- <assessment> -- '<variable name(s)/
 output:
   word_document:
     reference_docx: !expr ecs.data::get_pkg_docx_template()
-# bibliography: "`r ecs.data::get_proj_bib_file()`"
+# bibliography: "`r ecs.data::get_proj_bib_file()`" ## TODO: Borrar esta línea, O BIEN deescomentar esta línea y borrar siguiente UNA VEZ completo el documento
 bibliography: ../../../../www/Edad_con_salud_outcome_vars.bib
 csl: "`r ecs.data::get_proj_csl_file()`"
 # nocite: '@<cita_1>, @<cita_2>' ## TODO: Descomentar y añadir cita(s) o borrar campo
