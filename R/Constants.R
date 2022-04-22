@@ -1,8 +1,8 @@
+## R-related objects: ----
+
 PKG_NAME <- ecs.data:::.packageName
 
-R_VERSION <- "4.1.0"
-
-STATAMARKDOWN_URL <- "hemken/Statamarkdown"
+R_VERSION <- "4.1.3"
 
 CRAN_DEPENDENCIES <- c(
   "assertive.properties",
@@ -25,7 +25,14 @@ CRAN_DEPENDENCIES <- c(
 )
 
 
+## Remotes: ----
+
+STATAMARKDOWN_URL <- "hemken/Statamarkdown"
+
 REMOTE_REPO <- "https://cran.rstudio.com"
+
+
+## File system paths: ----
 
 USER_HOME_DIR       <- '~'
 DIR_UP              <- '..'
@@ -83,9 +90,6 @@ PROJECT_FILES <- c(
   README_FILE
 )
 
-CONFIG_TYPE <- "yaml"
-CONFIG_FILE <- paste("config", CONFIG_TYPE, sep = FILE_EXT_SEP)
-
 BASE_OUTCOME_FOLDER <- file.path(DOC_DIR, OUTCOMES_DIR)
 
 # Folders where the Rmarkdown documents reside:
@@ -121,17 +125,45 @@ DIR_OUTPUT <- file.path(
 names(DIR_OUTPUT) <- OUTCOME_VARS_FOLDERS
 
 
+## Configuration file objects: ----
+
+CONFIG_TYPE <- "yaml"
+CONFIG_FILE <- paste("config", CONFIG_TYPE, sep = FILE_EXT_SEP)
+
+
+## File type objects: ----
+
 STATA_EXT <- "dta"
 SPSS_EXT  <- "sav"
 RMD_EXT   <- "Rmd"
 WORD_EXT  <- "docx"
 
 
+## Character value objects: ----
+
 SUFFIX_SEP         <- '_'
 PATHS_COLLAPSE     <- '; '
+COMMA_SEP          <- ', '
 INIT_REGEX_PREFFIX <- '^'
 END_REGEX_SUFFIX   <- '$'
 REGEX_ESCAPE       <- '\\'
 ENDLINE            <- '\n'
 EMPTY_STRING       <- ''
 HORIZONTAL_RULE    <- paste0(rep('-', 72), collapse = EMPTY_STRING)
+
+
+## Project data objects: ----
+
+COHORTS <- c("2011", "2019")
+WAVES   <- c("COVID", 1:3)
+
+WAVES_PER_COHORT <- setNames(
+  list(
+    WAVES[2:4],
+    WAVES[2:1]
+  ),
+  nm = COHORTS
+)
+
+COHORTS_ENUM <- paste(COHORTS, collapse = COMMA_SEP)
+WAVES_ENUM   <- sapply(WAVES_PER_COHORT, paste, collapse = COMMA_SEP)

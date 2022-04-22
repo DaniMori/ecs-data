@@ -126,3 +126,10 @@ STATA_NOT_FOUND <- paste(
   "6. Escribe esa ruta en tus archivos Rmarkdown (línea 20)",
   sep = "\n"
 )
+
+
+WRONG_COHORT_PARAM <-
+  "\nEl parámetro `cohort` ha de ser uno de: {COHORTS_ENUM}"
+
+WRONG_WAVE_PARAM <-
+  "\nEl parámetro `wave` para `cohort = {cohort}` ha de ser uno de: {WAVES_ENUM[cohort]}"
