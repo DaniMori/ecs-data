@@ -7,6 +7,9 @@ output:
 bibliography: ../../../../www/Edad_con_salud_outcome_vars.bib
 csl: "`r ecs.data::get_proj_csl_file()`"
 # nocite: '@<cita_1>, @<cita_2>' ## TODO: Descomentar y añadir cita(s) o borrar campo
+params:
+  cohort: <cohort> ## TODO: Sustituir <cohort> por 2011 ó 2019
+  wave:   <wave>   ## TODO: Sustituir <wave> por 1, 2, 3 ó COVID
 ---
 
 <!--# TODO: Leer texto "Aviso preliminar" a continuación -->
@@ -57,6 +60,11 @@ knitr::opts_chunk$set( # Para todos los 'chunks' de código:
   collectcode = TRUE,  #   - Reutiliza el código de Stata de 'chunks' anteriores
   comment     = ''     #   - No añade ningún prefijo a los resultados
 )
+
+# Configuración de la plantilla: NO ALTERAR ESTA SECCIÓN ----
+cohort <- params$cohort
+wave   <- params$wave
+parse_dataset_params(cohort, wave)
 ```
 
 # Variable information
