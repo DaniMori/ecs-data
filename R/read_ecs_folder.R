@@ -57,11 +57,10 @@ read_ecs_folder <- function(folder     = PROJECT_FOLDER_KEYS,
 
   result <- config_fields[[folder]]
 
-  home_dir <- if (rel_stata) USER_HOME_STATA else USER_HOME_DIR
+  start_dir <- if (rel_stata) get_user_base_dir(normalize = TRUE)
+               else           get_user_home_dir(normalize = TRUE)
 
-  start_dir <- path.expand(home_dir)
-
-  file.path(USER_HOME_DIR, fs::path_rel(result, start = start_dir))
+  file.path(get_user_home_dir(), fs::path_rel(result, start = start_dir))
 }
 
 
@@ -82,6 +81,19 @@ get_user_base_dir <- function(normalize = FALSE) {
 
   ## Main: ----
   result <- file.path(USER_HOME_DIR, DIR_UP)
+
+  if (normalize) normalizePath(result, winslash = DIR_SEP)
+  else           result
+}
+
+#' @importFrom assertive.types assert_is_a_bool
+get_user_home_dir <- function(normalize = FALSE) {
+
+  ## Argument checking and formatting: ----
+  assertive.types::assert_is_a_bool(normalize)
+
+  ## Main: ----
+  result <- file.path(USER_HOME_DIR)
 
   if (normalize) normalizePath(result, winslash = DIR_SEP)
   else           result
