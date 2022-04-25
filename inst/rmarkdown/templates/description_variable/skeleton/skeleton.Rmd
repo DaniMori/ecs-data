@@ -1,5 +1,4 @@
 ---
-title: "Edad con Salud -- cohort <cohort> -- <assessment> -- '<variable name(s)/domain>'" ## TODO: Añadir "cohort", "assessment" y "variable name(s)/domain"
 output:
   word_document:
     reference_docx: !expr ecs.data::get_pkg_docx_template()
@@ -35,34 +34,18 @@ Esta plantilla está basada en el documento [LÉEME. Pautas para la creación de
 <!--# TODO: Borrar texto "Consideraciones generales" más arriba -->
 
 ```{r setup, include=FALSE}
-# Activar los paquetes que R necesita para ejecutar el código:
-
-library(Statamarkdown)
-
 ## TODO: sustituir '<path\to\>' por la ubicación de Stata (ejecutar `sysdir` en
 ##       Stata) y descomentar línea siguiente, o ELIMINAR LINEA SIGUIENTE:
 # STATA_PATH <- r"(<path\to\>StataSE-64.exe)" # Ruta al ejecutable de Stata
 
 
-# Opciones de configuración de las salidas de R y Stata:
-
-options(width = 88) # Ancho de salida de texto en R
-
-knitr::opts_chunk$set( # Para todos los 'chunks' de código:
-  ## TODO: Descomentar si hace falta
-  # engine.path = list(stata = STATA_PATH),
-  echo        = FALSE, #   - No muestra la sintaxis en el documento
-  results     = 'hide',#   - Omite los resultados de ejecutar la sintaxis
-  cleanlog    = TRUE,  #   - Omite repetir sintaxis en resultados de Stata
-  collectcode = TRUE,  #   - Reutiliza el código de Stata de 'chunks' anteriores
-  comment     = ''     #   - No añade ningún prefijo a los resultados
-)
-
-# Configuración de la plantilla: NO ALTERAR ESTA SECCIÓN ----
-cohort <- params$cohort
-wave   <- params$wave
-parse_dataset_params(cohort, wave)
+# Configuración de la plantilla: NO ALTERAR ESTA LINEA: ----
+config_outcome_var_template()
 ```
+
+---
+title: "Edad con Salud -- cohort `r params$cohort` -- `r params$wave` -- '<variable name(s)/domain>'" ## TODO: "variable name(s)/domain"
+---
 
 # Variable information
 
