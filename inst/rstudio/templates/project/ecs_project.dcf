@@ -11,3 +11,6 @@ Widget: CheckboxInput
 Label: Ejecutar configuración del paquete "ecs.data"
 Default: Off
 Position: left
+
+MarkdownWrap: Column
+MarkdownWrapAtColumn: 80
