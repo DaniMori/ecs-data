@@ -18,7 +18,8 @@ if (!require(devtools, quietly = TRUE)) install.packages("devtools")
 devtools::install_github("hemken/Statamarkdown")
 
 devtools::install_github(
-  "CCOMS-UAM/ecs-data/releases/latest",
+  "CCOMS-UAM/ecs-data",
+  ref = devtools::github_release(),
   force        = TRUE,
   dependencies = TRUE
 )
