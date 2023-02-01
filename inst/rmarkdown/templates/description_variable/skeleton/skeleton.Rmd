@@ -184,6 +184,7 @@ frecuencia absoluta y relativa, rango, media...).
 
 ```{stata load-data}
 * TODO: Descomentar linea correspondiente a la base de datos maestra a utilizar
+* TODO: Comprobar que la ruta de origen coincide con la localización de `DB`
 
 * Cohorte 2011, linea base:
 * use "~\UAM\Marta Miret Garcia - Bases de datos maestras Edad con Salud\Ola_1_Linea_base\All_COURAGE_VFINAL.dta"
@@ -193,6 +194,9 @@ frecuencia absoluta y relativa, rango, media...).
 
 * Cohorte 2011, ola 3:
 * use "~\UAM\Marta Miret Garcia - Bases de datos maestras Edad con Salud\Ola_3\Cohorte_2011\FINAL\20190208_PES16028242_Seguimiento_final_completo_V6.dta"
+
+* Cohorte 2011, ola 4:
+* use "~\UAM\Marta Miret Garcia - Bases de datos maestras Edad con Salud\Ola_4\Cohorte 2011\rawdata_c2011w4.dta"
 
 * Cohorte 2019, linea base:
 * use "~\UAM\Marta Miret Garcia - Bases de datos maestras Edad con Salud\Ola_3\Cohorte_2019\rawdata_c2019w1.dta"
@@ -286,6 +290,7 @@ keep ID_ECS q0007a_result proxy subsample_pre interview_pre <variable(s) generad
 
 
 * TODO: Descomentar linea correspondiente a la cohorte y ola utilizada
+* TODO: Comprobar que la ruta de destino coincide con la localización de `DOC`
 * TODO: Sustituir '<variable>' y '<qualifier>' por los valores correspondientes
 
 * Cohorte 2011, ola 1:
@@ -296,6 +301,9 @@ keep ID_ECS q0007a_result proxy subsample_pre interview_pre <variable(s) generad
 
 * Cohorte 2011, ola 3:
 * saveold "~\UAM\Marta Miret Garcia - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2011\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace version(13)
+
+* Cohorte 2011, ola 4:
+* saveold "~\UAM\Marta Miret Garcia - Documentacion Edad con Salud\Edad con salud - Ola 4\Outcomes\Cohorte 2011\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace version(13)
 
 * Cohorte 2019, ola 1:
 * saveold "~\UAM\Marta Miret Garcia - Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Outcome datasets\Outcome_<variable>_<qualifier>.dta", replace version(13)
