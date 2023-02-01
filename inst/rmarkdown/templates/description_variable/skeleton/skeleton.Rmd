@@ -205,7 +205,7 @@ frecuencia absoluta y relativa, rango, media...).
 * use "~\UAM\Marta Miret Garcia - Bases de datos maestras Edad con Salud\Subestudio_COVID\Edad_con_salud_Fichero_Completo.dta"
 ```
 
-```{stata generate-outcomes, echo=TRUE}
+```{stata generate-outcomes, echo=!DOUBLE_CODING}
 * TODO: Escribir aquí la sintaxis de generación de las variables
 ```
 
@@ -229,7 +229,7 @@ frecuencia absoluta y relativa, rango, media...).
 
 <br> <!--# Salto de línea (i.e. párrafo vacío); añadir donde se necesite -->
 
-```{stata descriptives, cleanlog=FALSE, collectcode=FALSE, results='markup'}
+```{stata descriptives, cleanlog=FALSE, collectcode=FALSE, results='markup', include=!DOUBLE_CODING}
 * TODO: Añadir estadísticos descriptivos de la(s) variable(s) generada(s)
 ```
 
@@ -283,12 +283,19 @@ diagnóstico, versión reducida).
 
 <!--# TODO: Borrar párrafos anteriores -->
 
-```{stata save-data}
+```{stata keep-vars}
 * TODO: Sustituir '<variable(s) generada(s)>' por las variables del dataset
 * TODO: Borrar `subsample_pre interview_pre` si no procede (dejar sólo para Cohorte 2019, Ola 1)
 keep ID_ECS q0007a_result proxy subsample_pre interview_pre <variable(s) generada(s)>
+```
+
+```{stata save-data-test, eval=TEST}
+* TODO: Sustituir '<variable>' y '<qualifier>' por los valores correspondientes
+saveold "Outcome_<variable>_<qualifier>.dta", replace version(13)
+```
 
 
+```{stata save-data, eval=!TEST}
 * TODO: Descomentar linea correspondiente a la cohorte y ola utilizada
 * TODO: Comprobar que la ruta de destino coincide con la localización de `DOC`
 * TODO: Sustituir '<variable>' y '<qualifier>' por los valores correspondientes

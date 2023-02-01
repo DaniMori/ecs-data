@@ -209,7 +209,8 @@ render_outcome_docs <- function(documents,
     rmarkdown::render(
       input = documents$input[index],
       output_format = "word_document",
-      output_dir    = dirname(output_doc)
+      output_dir    = dirname(output_doc),
+      params = list(test = FALSE)
     )
   }
 }
