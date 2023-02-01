@@ -230,7 +230,12 @@ frecuencia absoluta y relativa, rango, media...).
 <br> <!--# Salto de línea (i.e. párrafo vacío); añadir donde se necesite -->
 
 ```{stata descriptives, cleanlog=FALSE, collectcode=FALSE, results='markup', include=!DOUBLE_CODING}
-* TODO: Añadir estadísticos descriptivos de la(s) variable(s) generada(s)
+* TODO: Sustituir '<variable(s) generada(s)>' por las variables del dataset
+* TODO: Añadir `subsample_pre interview_pre` si procede (sólo para Cohorte 2019, Ola 1)
+keep ID_ECS q0007a_result proxy <variable(s) generada(s)>
+
+* TODO: Sustituir '<variable(s) generada(s)>' por las variables del dataset
+codebook <variable(s) generada(s)>
 ```
 
 <!--# TODO: Leer párrafos a continuación -->
@@ -282,12 +287,6 @@ caso que exista/n variable/s generadas en base a distintos criterios (e.g.,
 diagnóstico, versión reducida).
 
 <!--# TODO: Borrar párrafos anteriores -->
-
-```{stata keep-vars}
-* TODO: Sustituir '<variable(s) generada(s)>' por las variables del dataset
-* TODO: Borrar `subsample_pre interview_pre` si no procede (dejar sólo para Cohorte 2019, Ola 1)
-keep ID_ECS q0007a_result proxy subsample_pre interview_pre <variable(s) generada(s)>
-```
 
 ```{stata save-data-test, eval=TEST}
 * TODO: Sustituir '<variable>' y '<qualifier>' por los valores correspondientes
