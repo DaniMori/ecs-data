@@ -10,6 +10,9 @@ csl: "`r ecs.data::get_proj_csl_file()`"
 editor_options: 
   markdown:
     wrap: 80
+params:
+  test: true
+  double-coding: false
 ---
 
 <!--# TODO: Leer texto "Aviso preliminar" a continuación -->
@@ -75,6 +78,9 @@ knitr::opts_chunk$set( # Para todos los 'chunks' de código:
   collectcode = TRUE,  #   - Reutiliza el código de Stata de 'chunks' anteriores
   comment     = ''     #   - No añade ningún prefijo a los resultados
 )
+
+TEST          <- params$test
+DOUBLE_CODING <- params$`double-coding` & TEST
 ```
 
 # Variable information
