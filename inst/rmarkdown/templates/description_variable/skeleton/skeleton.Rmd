@@ -21,7 +21,7 @@ proyecto Edad con Salud. Su objetivo es ayudar a automatizar las tareas de
 procesamiento de datos del proyecto.
 
 Esta plantilla está basada en el documento
-[LÉEME. Pautas para la creación de variables..docx](https://dauam-my.sharepoint.com/:w:/r/personal/marta_miret_uam_es/Documents/Edad%20con%20Salud/Documentacion%20Edad%20con%20Salud/Edad%20con%20salud%20-%20Ola%203/Outcomes/L%C3%89EME.%20Pautas%20para%20la%20creaci%C3%B3n%20de%20variables..docx?d=wb61214c5b3e542638e3af80472f0089c&csf=1&web=1&e=GFJJ2i)
+[Outcome variable generation guidelines.docx](https://dauam.sharepoint.com/:w:/r/sites/EdadconSalud-OutcomesC2011W4/Documentos%20compartidos/Outcomes%20C2011%20W4/Outcome%20variable%20generation%20guidelines.docx?d=w70913a46b3de40fa9fa5f27e3b3f44f0&csf=1&web=1&e=xxES6R)
 . Sin embargo, **esta plantilla no sustituye a ese documento**. Por favor, lee
 dicho documento para conocer todas las instrucciones y convenciones del proceso
 de generación de variables outcome de Edad con Salud.
@@ -44,8 +44,8 @@ los nombres los espacios (sustituir por "\_"), tildes, "ñ" y "Ñ". Por ejemplo:
 
 -   Si se trata de una variable que ya estaba generada en evaluaciones
 anteriores/otras cohortes, puedes adaptar la información de ese documento. En
-ese caso, por favor, revisa cuidadosamente que la información contenida se
-ajusta a las particularidades de los datos.
+ese caso, por favor, **revisa cuidadosamente que la información contenida se
+ajusta a las particularidades de los datos**.
 
 <!--# TODO: Borrar texto "Consideraciones generales" más arriba -->
 
@@ -57,8 +57,8 @@ library(Statamarkdown)
 # Ruta al ejecutable de Stata (Ejecuta `sysdir` en Stata para encontrar la ruta)
 
 ## TODO: sustituir '<path\to\>' por la ubicación de Stata
-##       (ejecutar `sysdir` en Stata) y descomentar línea 34,
-##       o eliminar siguiente linea:
+##       (ejecutar `sysdir` en Stata) y descomentar línea 62,
+##       o eliminar linea 62:
 # STATA_PATH <- r"(<path\to\>StataSE-64.exe)"
 
 
@@ -107,17 +107,17 @@ la primera evaluación (línea base).
 +:===================+:=========================================+:===========+:=====================+
 | <var_name>         | <Etiqueta>                               | <Formato>  | <Categorías / Rango> |
 +--------------------+------------------------------------------+------------+----------------------+
-| bmi_cont           | Body mass index, continuous (c2019_w1)   | Continuous | 16-40                |
+| bmi_cont           | Body mass index, continuous (c2011_w4)   | Continuous | 16-40                |
 +--------------------+------------------------------------------+------------+----------------------+
-| bmi_cont_std       | Body mass index, standardized (c2019_w1) | Continuous | standardized         |
+| bmi_cont_std       | Body mass index, standardized (c2011_w4) | Continuous | standardized         |
 +--------------------+------------------------------------------+------------+----------------------+
-| bmi                | Body mass index, categories (c2019_w1)   | Ordinal    | 1 Underweight;       |
+| bmi                | Body mass index, categories (c2011_w4)   | Ordinal    | 1 = Underweight;     |
 |                    |                                          |            |                      |
-|                    |                                          |            | 2 Normal weight;     |
+|                    |                                          |            | 2 = Normal weight;   |
 |                    |                                          |            |                      |
-|                    |                                          |            | 3 Overweight;        |
+|                    |                                          |            | 3 = Overweight;      |
 |                    |                                          |            |                      |
-|                    |                                          |            | 4 Obese              |
+|                    |                                          |            | 4 = Obese            |
 +--------------------+------------------------------------------+------------+----------------------+
 
 <!--# TODO: Añadir variables outcome a la tabla -->
@@ -130,7 +130,7 @@ la primera evaluación (línea base).
 
 Por favor, incluye aquí una breve descripción de la variable o constructo que
 estás trabajando. Qué significa o qué evalúa esa variable y por qué es
-importante.
+importante. Incluye las referencias bibliográficas necesarias.
 
 <!--# TODO: Borrar párrafo anterior -->
 
@@ -144,13 +144,16 @@ Este apartado es complementario al siguiente. Trata de describir, de forma clara
 y concisa, cómo has generado la variable. El objetivo de esta sección es doble.
 Por un lado, que sirva de apoyo para los/as investigadores/as que pudieran no
 estar familiarizados con el código utilizado para generar la/s variable/s (e.g.,
-R, Stata, SPSS, SAS). Por otro, facilitar la información suficiente para
-describir adecuadamente la/s variable/s en los artículos científicos.
+R, Stata). Por otro, facilitar la información suficiente para describir
+adecuadamente la/s variable/s en los artículos científicos.
 
 Si se trata de variable/s que ya se había/n generado en ocasiones anteriores
 (e.g., evaluaciones o cohortes distintas), por favor, documenta las potenciales
 particularidades o modificaciones que realices (e.g., versión reducida,
 detección de errores).
+
+Como criterio general, **esta sección debería ser suficiente para entender cómo
+ha de generarse la variable sin necesidad de entender la sintaxis**.
 
 <!--# TODO: Borrar párrafos anteriores -->
 
@@ -163,13 +166,13 @@ sintaxis utilizada (e.g., 'R 4.0.5' en lugar de 'Stata 15') -->
 
 <!--# TODO: Leer párrafo a continuación -->
 
-Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
-Es fundamental que revises minuciosamente esta sección. Cualquier investigador/a
-debería poder generar la/s variable/s y obtener los mismos resultados. Por
-favor, indica también el programa utilizado (e.g., Stata, R, SPSS, SAS), si bien
-ten en cuenta que el consenso es utilizar el programa Stata. Es recomendable
-incluir también una pequeña tabla con los descriptivos principales de esta/s
-variable/s (i.e., n, frecuencia absoluta y relativa, rango, media...).
+Aquí debes incluir el algoritmo o código empleado para generar la/s variable/s.
+Es fundamental que revises minuciosamente esta sección. **Cualquier
+investigador/a debería poder generar la/s variable/s y obtener los mismos
+resultados**. Por favor, indica también el programa utilizado (e.g., Stata, R),
+si bien ten en cuenta que **el consenso es utilizar Stata**. Incluye también una
+pequeña tabla con los descriptivos principales de esta/s variable/s (i.e., n,
+frecuencia absoluta y relativa, rango, media...).
 
 <!--# TODO: Borrar párrafo anterior -->
 
@@ -250,21 +253,21 @@ estudio (porque no quieren, porque no pueden, porque no los encontramos...) y
 dado que no todos los participantes responden a todos los ítems, se incluirán
 las siguientes variables como apoyo para la interpretación de los resultados:
 
--   Variable estado de entrevista: q0007a_result El código 1 hace referencia a
-todas las personas que han participado en el estudio.
+    -   **Variable estado de entrevista**: `q0007a_result`. El código 1 hace
+    referencia a todas las personas que han participado en el estudio.
 
--   Variable proxy: proxy El código 1 hace referencia a los participantes que
-realizaron una entrevista proxy. Esto quiere decir que el individuo seleccionado
-no contestó las preguntas, sino que otra persona respondió en su lugar a una
-versión reducida del cuestionario. El código 2 hace referencia a los
-participantes que hicieron entrevista directa.
+    -   **Variable proxy**: proxy El código 1 hace referencia a los
+    participantes que realizaron una entrevista proxy. Esto quiere decir que el
+    individuo seleccionado no contestó las preguntas, sino que otra persona
+    respondió en su lugar a una versión reducida del cuestionario. El código 2
+    hace referencia a los participantes que hicieron entrevista directa.
 
 Otras consideraciones:
 
--   Las bases de datos deben tener formato .dta (Stata)
+-   Las bases de datos deben tener formato Stata 13 (.dta)
 
 -   El nombre de estos archivos debe tener la siguiente estructura:
-"Outcome_nombrevariable_particularidad". Se añadirá cualquier particularidad en
+"Outcome_[variablename]_[qualifier]". Se añadirá cualquier particularidad en
 caso que exista/n variable/s generadas en base a distintos criterios (e.g.,
 diagnóstico, versión reducida).
 
@@ -348,9 +351,7 @@ He terminado de generar la/s variable/s.
 ¡Maravilloso, enhorabuena! Cuando hayas terminado de generar la/s variable/s,
 por favor, actualiza el documento
 
-    "Creación y revisión de variables_reparto y control
-    ubicado en
-    `Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Creación y revisión de variables_reparto y control.docx`"*
+    [C2011_W4_Planning_outcomes.xlsxl](https://dauam.sharepoint.com/:x:/r/sites/EdadconSalud-OutcomesC2011W4/Documentos compartidos/Outcomes C2011 W4/C2011_W4_Planning_outcomes.xlsx?d=w3e49821bd21047ab8f57ab5837db2393&csf=1&web=1&e=QQRWdn)
 
 \*Este documento hace referencia exclusiva a las variables de cohorte 2011, Ola
 4.
@@ -361,7 +362,8 @@ inconsistencias, errores o surjan dudas, se te comunicará para proceder con su
 revisión.
 
 Finalmente, cuando todas las variables estén generadas y revisadas se creará una
-base de datos común con todas ellas y los datos sociodemográficos principales de los participantes.
+base de datos común con todas ellas y los datos sociodemográficos principales de
+los participantes.
 
 <!--# TODO: Borrar párrafos anteriores -->
 
