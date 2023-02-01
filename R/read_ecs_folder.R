@@ -16,11 +16,15 @@ PROJECT_FOLDER_KEYS <- c(DB_FOLDER_KEY, DOC_FOLDER_KEY)
 #'        configuración esté vacío. En caso de no ejecutarse la configuración
 #'        (por defecto) si el archivo de configuración está vacío termina con un
 #'        error.
+#' @param rel (`TRUE`) valor lógico indicando si devolver la ruta relativa al
+#'        "HOME" de usuario. Windows suele considerar el "HOME" como una ruta
+#'         del tipo `C:/Users/<username>/Documents`.
 #' @param rel_stata (`FALSE`) valor lógico indicando si devolver la ruta
 #'        relativa al "HOME" de usuario entendido según Stata. Windows suele
 #'        considerar el "HOME" como una ruta del tipo
 #'        `C:/Users/<username>/Documents`, mientras que Stata considera el
-#'        "HOME" como `C:/Users/<username>`.
+#'        "HOME" como `C:/Users/<username>`. No tiene ningún efecto si
+#'        `rel = FALSE`.
 #'
 #' @return ruta local a la carpeta del  proyecto, relativa al "HOME" del usuario
 #' @details Devuelve la ruta a la carpeta de OneDrive de Edad con Salud
@@ -36,6 +40,7 @@ PROJECT_FOLDER_KEYS <- c(DB_FOLDER_KEY, DOC_FOLDER_KEY)
 #' @export
 read_ecs_folder <- function(folder     = PROJECT_FOLDER_KEYS,
                             run_config = FALSE,
+                            rel        = TRUE,
                             rel_stata  = FALSE) {
   folder <- match.arg(folder)
 
@@ -57,10 +62,17 @@ read_ecs_folder <- function(folder     = PROJECT_FOLDER_KEYS,
 
   result <- config_fields[[folder]]
 
-  start_dir <- if (rel_stata) get_user_base_dir(normalize = TRUE)
-               else           get_user_home_dir(normalize = TRUE)
+  if (rel) {
 
-  file.path(get_user_home_dir(), fs::path_rel(result, start = start_dir))
+    start_dir <- if (rel_stata) get_user_base_dir(normalize = TRUE)
+                 else           get_user_home_dir(normalize = TRUE)
+
+    result <- fs::path_rel(result, start = start_dir)
+
+    return(file.path(get_user_home_dir(), result))
+  }
+
+  result
 }
 
 

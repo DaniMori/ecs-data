@@ -9,6 +9,7 @@ compartida de OneDrive) indicada y la devuelve como una ruta relativa al
 read_ecs_folder(
   folder = PROJECT_FOLDER_KEYS,
   run_config = FALSE,
+  rel = TRUE,
   rel_stata = FALSE
 )
 }
@@ -23,11 +24,16 @@ configuración esté vacío. En caso de no ejecutarse la configuración
 (por defecto) si el archivo de configuración está vacío termina con un
 error.}
 
+\item{rel}{(`TRUE`) valor lógico indicando si devolver la ruta relativa al
+"HOME" de usuario. Windows suele considerar el "HOME" como una ruta
+ del tipo `C:/Users/<username>/Documents`.}
+
 \item{rel_stata}{(`FALSE`) valor lógico indicando si devolver la ruta
 relativa al "HOME" de usuario entendido según Stata. Windows suele
 considerar el "HOME" como una ruta del tipo
 `C:/Users/<username>/Documents`, mientras que Stata considera el
-"HOME" como `C:/Users/<username>`.}
+"HOME" como `C:/Users/<username>`. No tiene ningún efecto si
+`rel = FALSE`.}
 }
 \value{
 ruta local a la carpeta del  proyecto, relativa al "HOME" del usuario

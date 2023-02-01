@@ -127,9 +127,15 @@ STATA_NOT_FOUND <- paste(
   sep = "\n"
 )
 
+STATA_PATH_NOT_FOUND <-
+  "No se encuentra la ruta a Stata. Inicializa el objeto STATA_PATH."
+
 
 WRONG_COHORT_PARAM <-
   "\nEl parámetro `cohort` ha de ser uno de: {COHORTS_ENUM}"
 
 WRONG_WAVE_PARAM <-
   "\nEl parámetro `wave` para `cohort = {cohort}` ha de ser uno de: {WAVES_ENUM[cohort]}"
+
+WRONG_VARIABLE_PARAM <-
+  "\nEl parámetro `variable` no puede estar vacío"

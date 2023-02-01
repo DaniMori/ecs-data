@@ -1,15 +1,29 @@
 #' @export
 #'
-#' @importFrom glue glue
+#' @importFrom knitr opts_chunk
 config_outcome_var_template <- function() {
 
   # Activate necessary packages:
   library(Statamarkdown)
 
-  # Configure Stata path if necessary:
-  engine_paths <- list()
+  # Configure Stata path (if necessary):
 
-  if (exists("STATA_PATH")) engine_paths <- c(engine_paths, stata = STATA_PATH)
+  engine_paths <- knitr::opts_chunk$get("engine.path")
+
+  if (is.null(engine_paths) || is.null(engine_paths$stata)) {
+
+    engine_paths <- list()
+
+    if (exists("STATA_PATH")) {
+
+      engine_paths <- c(engine_paths, stata = STATA_PATH)
+
+    } else {
+
+      stop(STATA_PATH_NOT_FOUND)
+    }
+  }
+
 
   # Output configuration options:
   options(width = 88L) # R text output width
@@ -23,7 +37,7 @@ config_outcome_var_template <- function() {
     comment     = ''     # No prefix in results
   )
 
-  ecs.data:::parse_dataset_params(params$cohort, params$wave)
+  parse_dataset_params(params$cohort, params$wave, params$variable)
 
   invisible(NULL)
 }

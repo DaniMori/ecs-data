@@ -47,11 +47,11 @@ USER_HOME_STATA     <- file.path(USER_HOME_DIR, DIR_UP)
 
 DEFAULT_ECS_MAIN_PATH <- file.path(USER_HOME_DIR, DIR_UP, DIR_ONEDRIVE_ORG)
 
-DB_DIR_ID      <- "Bases de datos maestras"
-DOC_DIR_ID     <- "Documentacion"
-PROJECT_SUFFIX <- "Edad con Salud"
-DB_DIR_NAME    <- paste(DB_DIR_ID,  PROJECT_SUFFIX)
-DOC_DIR_NAME   <- paste(DOC_DIR_ID, PROJECT_SUFFIX)
+DB_DIR_ID    <- "Bases de datos maestras"
+DOC_DIR_ID   <- "Documentacion"
+PROJECT_NAME <- "Edad con Salud"
+DB_DIR_NAME  <- paste(DB_DIR_ID,  PROJECT_NAME)
+DOC_DIR_NAME <- paste(DOC_DIR_ID, PROJECT_NAME)
 
 DEFAULT_DB_DIR  <- paste(
   ECS_DIRS_OWNER,
@@ -151,6 +151,11 @@ ENDLINE            <- '\n'
 EMPTY_STRING       <- ''
 HORIZONTAL_RULE    <- paste0(rep('-', 72), collapse = EMPTY_STRING)
 
+
+## Verbatim objects: ----
+
+DESCRIPTION_TITLE <-
+  "{PROJECT_NAME} -- cohort {cohort} -- {wave} -- '{variable}'"
 
 ## Project data objects: ----
 
