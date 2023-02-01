@@ -16,9 +16,15 @@ editor_options:
 
 **Aviso preliminar**
 
-Esta plantilla está diseñada para la generación de "variables outcome" del proyecto Edad con Salud. Su objetivo es ayudar a automatizar las tareas de procesamiento de datos del proyecto.
+Esta plantilla está diseñada para la generación de "variables outcome" del
+proyecto Edad con Salud. Su objetivo es ayudar a automatizar las tareas de
+procesamiento de datos del proyecto.
 
-Esta plantilla está basada en el documento [LÉEME. Pautas para la creación de variables..docx](https://dauam-my.sharepoint.com/:w:/r/personal/marta_miret_uam_es/Documents/Edad%20con%20Salud/Documentacion%20Edad%20con%20Salud/Edad%20con%20salud%20-%20Ola%203/Outcomes/L%C3%89EME.%20Pautas%20para%20la%20creaci%C3%B3n%20de%20variables..docx?d=wb61214c5b3e542638e3af80472f0089c&csf=1&web=1&e=GFJJ2i). Sin embargo, **esta plantilla no sustituye a ese documento**. Por favor, lee dicho documento para conocer todas las instrucciones y convenciones del proceso de generación de variables outcome de Edad con Salud.
+Esta plantilla está basada en el documento
+[LÉEME. Pautas para la creación de variables..docx](https://dauam-my.sharepoint.com/:w:/r/personal/marta_miret_uam_es/Documents/Edad%20con%20Salud/Documentacion%20Edad%20con%20Salud/Edad%20con%20salud%20-%20Ola%203/Outcomes/L%C3%89EME.%20Pautas%20para%20la%20creaci%C3%B3n%20de%20variables..docx?d=wb61214c5b3e542638e3af80472f0089c&csf=1&web=1&e=GFJJ2i)
+. Sin embargo, **esta plantilla no sustituye a ese documento**. Por favor, lee
+dicho documento para conocer todas las instrucciones y convenciones del proceso
+de generación de variables outcome de Edad con Salud.
 
 <!--# TODO: Borrar texto "Aviso preliminar" más arriba -->
 
@@ -26,11 +32,20 @@ Esta plantilla está basada en el documento [LÉEME. Pautas para la creación de
 
 **Consideraciones generales**
 
--   Puesto que nuestros datos son analizados por investigadores/as procedentes de distintas partes del mundo, **todos los documentos deben estar en inglés**.
+-   Puesto que nuestros datos son analizados por investigadores/as procedentes
+de distintas partes del mundo, **todos los documentos deben estar en inglés**.
 
--   El **nombre de este archivo** debe tener la siguiente estructura: "Description\_<variablename>\_<qualifiers>". En '<qualifiers>' se añadirá cualquier particularidad, en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida). Por favor, evita en los nombres los espacios (sustituir por "\_"), tildes, "ñ" y "Ñ". Por ejemplo: "Description_cognitivereserve".
+-   El **nombre de este archivo** debe tener la siguiente estructura:
+"Description\_<variablename>\_<qualifiers>". En '<qualifiers>' se añadirá
+cualquier particularidad, en caso que exista/n variable/s generadas en base a
+distintos criterios (e.g., diagnóstico, versión reducida). Por favor, evita en
+los nombres los espacios (sustituir por "\_"), tildes, "ñ" y "Ñ". Por ejemplo:
+"Description_cognitivereserve".
 
--   Si se trata de una variable que ya estaba generada en evaluaciones anteriores/otras cohortes, puedes adaptar la información de ese documento. En ese caso, por favor, revisa cuidadosamente que la información contenida se ajusta a las particularidades de los datos.
+-   Si se trata de una variable que ya estaba generada en evaluaciones
+anteriores/otras cohortes, puedes adaptar la información de ese documento. En
+ese caso, por favor, revisa cuidadosamente que la información contenida se
+ajusta a las particularidades de los datos.
 
 <!--# TODO: Borrar texto "Consideraciones generales" más arriba -->
 
@@ -66,13 +81,24 @@ knitr::opts_chunk$set( # Para todos los 'chunks' de código:
 
 <!--# TODO: Leer párrafos a continuación -->
 
-Aquí debes incluir una tabla con los datos principales de todas la/s variable/s finales generada/s. Esto es, el nombre de la/s variable/s (tal y como aparece/n en la base de datos), la/s etiqueta/s, el formato (discreta, continua, nominal, ordinal, binaria) y los valores posibles (e.g., rango para continuas, opciones de respuesta para variables categóricas).
+Aquí debes incluir una tabla con los datos principales de todas la/s variable/s
+finales generada/s. Esto es, el nombre de la/s variable/s (tal y como aparece/n
+en la base de datos), la/s etiqueta/s, el formato (discreta, continua, nominal,
+ordinal, binaria) y los valores posibles (e.g., rango para continuas, opciones
+de respuesta para variables categóricas).
 
-En esta tabla debes incluir la variable principal, así como las transformaciones pertinentes asociadas a esta variable, como ocurre con el ejemplo anterior. En el caso de que la/s variable/s generada/s que requiera/n la creación previa de otras variables, solo se incluirán aquellas que pueden resultar clave para entender o analizar la variable final. Por ejemplo, si creas una variable a partir de otra existente en la que eliminas casos con datos inválidos o modificas las etiquetas, no es necesario que incluyas esta información en este punto (tampoco en la base de datos). Los/as investigadores/as podrán verlo en el algoritmo. En caso que tengas dudas sobre qué variables incluir en este punto, por favor, pregunta a alguno de los/as compañeros responsables del proyecto.
+En esta tabla debes incluir la variable principal, así como las transformaciones
+pertinentes asociadas a esta variable, como ocurre con el ejemplo anterior. En
+el caso de que la/s variable/s generada/s que requiera/n la creación previa de otras variables, solo se incluirán aquellas que pueden resultar clave para entender o analizar la variable final. Por ejemplo, si creas una variable a partir de otra existente en la que eliminas casos con datos inválidos o modificas las etiquetas, no es necesario que incluyas esta información en este punto (tampoco en la base de datos). Los/as investigadores/as podrán verlo en el algoritmo. En caso que tengas dudas sobre qué variables incluir en este punto, por favor, pregunta a alguno de los/as compañeros responsables del proyecto.
 
-En la etiqueta de la/s variable/s generadas, por favor **incluye información acerca de la cohorte y la evaluación de la que se trata**. El patrón es un sufijo como (c<cohorte>\_w<ola>), donde <cohorte> puede tomar los valores 2011 o 2019, y <ola> puede tomar los valores: 1, 2, 3, 4, etc. (COVID para el subestudio COVID).
+En la etiqueta de la/s variable/s generadas, por favor **incluye información
+acerca de la cohorte y la evaluación de la que se trata**. El patrón es un
+sufijo como (c<cohorte>\_w<ola>), donde <cohorte> puede tomar los valores 2011 o
+2019, y <ola> puede tomar los valores: 1, 2, 3, 4, etc. (COVID para el
+subestudio COVID).
 
-**Ejemplos:** (c2011_w1), (c2019_w3), (c2019_wCOVID). "w1" se correspondería con la primera evaluación (línea base).
+**Ejemplos:** (c2011_w1), (c2019_w3), (c2019_wCOVID). "w1" se correspondería con
+la primera evaluación (línea base).
 
 <!--# TODO: Borrar párrafos anteriores -->
 
@@ -102,7 +128,9 @@ En la etiqueta de la/s variable/s generadas, por favor **incluye información ac
 
 <!--# TODO: Leer párrafo a continuación -->
 
-Por favor, incluye aquí una breve descripción de la variable o constructo que estás trabajando. Qué significa o qué evalúa esa variable y por qué es importante.
+Por favor, incluye aquí una breve descripción de la variable o constructo que
+estás trabajando. Qué significa o qué evalúa esa variable y por qué es
+importante.
 
 <!--# TODO: Borrar párrafo anterior -->
 
@@ -112,9 +140,17 @@ Por favor, incluye aquí una breve descripción de la variable o constructo que 
 
 <!--# TODO: Leer párrafos a continuación -->
 
-Este apartado es complementario al siguiente. Trata de describir, de forma clara y concisa, cómo has generado la variable. El objetivo de esta sección es doble. Por un lado, que sirva de apoyo para los/as investigadores/as que pudieran no estar familiarizados con el código utilizado para generar la/s variable/s (e.g., R, Stata, SPSS, SAS). Por otro, facilitar la información suficiente para describir adecuadamente la/s variable/s en los artículos científicos.
+Este apartado es complementario al siguiente. Trata de describir, de forma clara
+y concisa, cómo has generado la variable. El objetivo de esta sección es doble.
+Por un lado, que sirva de apoyo para los/as investigadores/as que pudieran no
+estar familiarizados con el código utilizado para generar la/s variable/s (e.g.,
+R, Stata, SPSS, SAS). Por otro, facilitar la información suficiente para
+describir adecuadamente la/s variable/s en los artículos científicos.
 
-Si se trata de variable/s que ya se había/n generado en ocasiones anteriores (e.g., evaluaciones o cohortes distintas), por favor, documenta las potenciales particularidades o modificaciones que realices (e.g., versión reducida, detección de errores).
+Si se trata de variable/s que ya se había/n generado en ocasiones anteriores
+(e.g., evaluaciones o cohortes distintas), por favor, documenta las potenciales
+particularidades o modificaciones que realices (e.g., versión reducida,
+detección de errores).
 
 <!--# TODO: Borrar párrafos anteriores -->
 
@@ -122,11 +158,18 @@ Si se trata de variable/s que ya se había/n generado en ocasiones anteriores (e
 
 # Syntax used to create the variable (Stata 15)
 
-<!--# TODO: Cambiar software y versión en el título según correponda a la sintaxis utilizada (e.g., 'R 4.0.5' en lugar de 'Stata 15') -->
+<!--# TODO: Cambiar software y versión en el título según correponda a la
+sintaxis utilizada (e.g., 'R 4.0.5' en lugar de 'Stata 15') -->
 
 <!--# TODO: Leer párrafo a continuación -->
 
-Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s. Es fundamental que revises minuciosamente esta sección. Cualquier investigador/a debería poder generar la/s variable/s y obtener los mismos resultados. Por favor, indica también el programa utilizado (e.g., Stata, R, SPSS, SAS), si bien ten en cuenta que el consenso es utilizar el programa Stata. Es recomendable incluir también una pequeña tabla con los descriptivos principales de esta/s variable/s (i.e., n, frecuencia absoluta y relativa, rango, media...).
+Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
+Es fundamental que revises minuciosamente esta sección. Cualquier investigador/a
+debería poder generar la/s variable/s y obtener los mismos resultados. Por
+favor, indica también el programa utilizado (e.g., Stata, R, SPSS, SAS), si bien
+ten en cuenta que el consenso es utilizar el programa Stata. Es recomendable
+incluir también una pequeña tabla con los descriptivos principales de esta/s
+variable/s (i.e., n, frecuencia absoluta y relativa, rango, media...).
 
 <!--# TODO: Borrar párrafo anterior -->
 
@@ -157,9 +200,17 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 
 **Otras consideraciones**
 
-    -   El **número de participantes (n) que debe aparecer en cada base de datos** debe ser correspondiente con aquella que aparece en la base de datos maestra u original. Para la **base de datos de la muestra completa serán 3002 participantes**. En el caso de la **muestra pre-confinamiento serán 1935 participantes**.
+    -   El **número de participantes (n) que debe aparecer en cada base de
+    datos** debe ser correspondiente con aquella que aparece en la base de datos
+    maestra u original. Para la **base de datos de la muestra completa serán
+    3002 participantes**. En el caso de la **muestra pre-confinamiento serán
+    1935 participantes**.
 
-    -   Es recomendable que revises los descriptivos de la/s variable/s generadas. De esta forma podrás detectar posibles errores (e.g., un porcentaje de datos perdidos que no responde a lo esperado; una prevalencia de x patología muy superior o inferior a lo que la evidencia científica señala).
+    -   Es recomendable que revises los descriptivos de la/s variable/s
+    generadas. De esta forma podrás detectar posibles errores (e.g., un
+    porcentaje de datos perdidos que no responde a lo esperado; una prevalencia
+    de x patología muy superior o inferior a lo que la evidencia científica
+    señala).
 
 <!--# TODO: Borrar texto "Otras consideraciones" anterior -->
 
@@ -173,25 +224,49 @@ Aquí debes copiar el algoritmo o código empleado para generar la/s variable/s.
 
 -   Variable/s de identificación
 
-**La variable de identificación que debes incluir para la cohorte 2019 es ID_ECS**. Para conocer la equivalencia y las particularidades de las distintas variables de identificación, por favor, revisa la tabla 1 en el documento [LÉEME. Pautas para la creación de variables..docx](https://dauam-my.sharepoint.com/:w:/r/personal/marta_miret_uam_es/Documents/Edad%20con%20Salud/Documentacion%20Edad%20con%20Salud/Edad%20con%20salud%20-%20Ola%203/Outcomes/L%C3%89EME.%20Pautas%20para%20la%20creaci%C3%B3n%20de%20variables..docx?d=wb61214c5b3e542638e3af80472f0089c&csf=1&web=1&e=GFJJ2i).
+**La variable de identificación que debes incluir para la cohorte 2019 es
+ID_ECS**. Para conocer la equivalencia y las particularidades de las distintas
+variables de identificación, por favor, revisa la tabla 1 en el documento
+[LÉEME. Pautas para la creación de variables..docx](https://dauam-my.sharepoint.com/:w:/r/personal/marta_miret_uam_es/Documents/Edad%20con%20Salud/Documentacion%20Edad%20con%20Salud/Edad%20con%20salud%20-%20Ola%203/Outcomes/L%C3%89EME.%20Pautas%20para%20la%20creaci%C3%B3n%20de%20variables..docx?d=wb61214c5b3e542638e3af80472f0089c&csf=1&web=1&e=GFJJ2i)
+.
 
 -   Variable(s) generada(s)
 
-Debes incluir la variable principal, así como las transformaciones pertinentes asociadas a esta variable. En el caso de que la/s variable/s generada/s que requiera/n la creación previa de otras variables, solo se incluirán aquellas que pueden resultar clave para entender o analizar la variable final. Por ejemplo, si creas una variable a partir de otra existente en la que eliminas casos con datos inválidos o modificas las etiquetas, no es necesario que incluyas esta información en este punto (tampoco en el documento de descripción). Los/as investigadores/as podrán verlo en el algoritmo. En caso que tengas dudas sobre qué variables incluir en este punto, por favor, pregunta a alguno de los/as compañeros responsables del proyecto.
+Debes incluir la variable principal, así como las transformaciones pertinentes
+asociadas a esta variable. En el caso de que la/s variable/s generada/s que
+requiera/n la creación previa de otras variables, solo se incluirán aquellas que
+pueden resultar clave para entender o analizar la variable final. Por ejemplo,
+si creas una variable a partir de otra existente en la que eliminas casos con
+datos inválidos o modificas las etiquetas, no es necesario que incluyas esta
+información en este punto (tampoco en el documento de descripción). Los/as
+investigadores/as podrán verlo en el algoritmo. En caso que tengas dudas sobre
+qué variables incluir en este punto, por favor, pregunta a alguno de los/as
+compañeros responsables del proyecto.
 
 -   Variables de apoyo
 
-Puesto que en ocasiones no todos los individuos contactados participan en el estudio (porque no quieren, porque no pueden, porque no los encontramos...) y dado que no todos los participantes responden a todos los ítems, se incluirán las siguientes variables como apoyo para la interpretación de los resultados:
+Puesto que en ocasiones no todos los individuos contactados participan en el
+estudio (porque no quieren, porque no pueden, porque no los encontramos...) y
+dado que no todos los participantes responden a todos los ítems, se incluirán
+las siguientes variables como apoyo para la interpretación de los resultados:
 
--   Variable estado de entrevista: q0007a_result El código 1 hace referencia a todas las personas que han participado en el estudio.
+-   Variable estado de entrevista: q0007a_result El código 1 hace referencia a
+todas las personas que han participado en el estudio.
 
--   Variable proxy: proxy El código 1 hace referencia a los participantes que realizaron una entrevista proxy. Esto quiere decir que el individuo seleccionado no contestó las preguntas, sino que otra persona respondió en su lugar a una versión reducida del cuestionario. El código 2 hace referencia a los participantes que hicieron entrevista directa.
+-   Variable proxy: proxy El código 1 hace referencia a los participantes que
+realizaron una entrevista proxy. Esto quiere decir que el individuo seleccionado
+no contestó las preguntas, sino que otra persona respondió en su lugar a una
+versión reducida del cuestionario. El código 2 hace referencia a los
+participantes que hicieron entrevista directa.
 
 Otras consideraciones:
 
 -   Las bases de datos deben tener formato .dta (Stata)
 
--   El nombre de estos archivos debe tener la siguiente estructura: "Outcome_nombrevariable_particularidad". Se añadirá cualquier particularidad en caso que exista/n variable/s generadas en base a distintos criterios (e.g., diagnóstico, versión reducida).
+-   El nombre de estos archivos debe tener la siguiente estructura:
+"Outcome_nombrevariable_particularidad". Se añadirá cualquier particularidad en
+caso que exista/n variable/s generadas en base a distintos criterios (e.g.,
+diagnóstico, versión reducida).
 
 <!--# TODO: Borrar párrafos anteriores -->
 
@@ -226,14 +301,18 @@ keep ID_ECS q0007a_result proxy subsample_pre interview_pre <variable(s) generad
 
 <!--# TODO: Leer párrafo a continuación -->
 
-Incluye tu nombre completo, correo electrónico, teléfono e institución a la que perteneces. Si el algoritmo que has generado ha estado basado en el trabajo que ya había hecho otro/a compañero/a, por favor, indícalo.
+Incluye tu nombre completo, correo electrónico, teléfono e institución a la que
+perteneces. Si el algoritmo que has generado ha estado basado en el trabajo que
+ya había hecho otro/a compañero/a, por favor, indícalo.
 
 <!--# TODO: Borrar párrafo anterior -->
 
-<!--# TODO: Completar '<Nombre y apellidos>', 'nombre.buzon@institucion.org>', y '<prefijo>' y '<teléfono>' -->
+<!--# TODO: Completar '<Nombre y apellidos>', 'nombre.buzon@institucion.org>', y
+'<prefijo>' y '<teléfono>' -->
 
 -   Name: <Nombre y apellidos>
--   e-mail: [\<nombre.buzon\@institucion.org\>](mailto:nombre.buzon@institucion.org){.email}
+-   e-mail:
+    [\<nombre.buzon\@institucion.org\>](mailto:nombre.buzon@institucion.org){.email}
 -   Phone number: (+<prefijo>) <teléfono>
 
 <br>
@@ -243,14 +322,17 @@ Incluye tu nombre completo, correo electrónico, teléfono e institución a la q
 \< Original version:
 
 -   Name: <Nombre y apellidos>
--   e-mail: [\<nombre.buzon\@institucion.org\>](mailto:nombre.buzon@institucion.org){.email}
+-   e-mail:
+    [\<nombre.buzon\@institucion.org\>](mailto:nombre.buzon@institucion.org){.email}
 -   Phone number: (+<prefijo>) <teléfono> \>
 
 # References
 
 <!--# TODO: Leer párrafo a continuación -->
 
-Indica las referencias utilizadas para explicar o generar la/s variable/s. Esta información será igualmente útil para citar apropiadamente en nuestros artículos científicos.
+Indica las referencias utilizadas para explicar o generar la/s variable/s. Esta
+información será igualmente útil para citar apropiadamente en nuestros artículos
+científicos.
 
 <!--# TODO: Borrar párrafo anterior -->
 
@@ -263,17 +345,23 @@ Indica las referencias utilizadas para explicar o generar la/s variable/s. Esta 
 
 He terminado de generar la/s variable/s.
 
-¡Maravilloso, enhorabuena! Cuando hayas terminado de generar la/s variable/s, por favor, actualiza el documento
+¡Maravilloso, enhorabuena! Cuando hayas terminado de generar la/s variable/s,
+por favor, actualiza el documento
 
     "Creación y revisión de variables_reparto y control
     ubicado en
     `Documentacion Edad con Salud\Edad con salud - Ola 3\Outcomes\Cohorte 2019\Creación y revisión de variables_reparto y control.docx`"*
 
-\*Este documento hace referencia exclusiva a las variables de cohorte 2019.
+\*Este documento hace referencia exclusiva a las variables de cohorte 2011, Ola
+4.
 
-Así, el/la compañero/a al que le corresponda podrá examinar los distintos archivos y, sobre todo, el algoritmo. En caso de que se detecten inconsistencias, errores o surjan dudas, se te comunicará para proceder con su revisión.
+Así, el/la compañero/a al que le corresponda podrá examinar los distintos
+archivos y, sobre todo, el algoritmo. En caso de que se detecten
+inconsistencias, errores o surjan dudas, se te comunicará para proceder con su
+revisión.
 
-Finalmente, cuando todas las variables estén generadas y revisadas se creará una base de datos común con todas ellas y los datos sociodemográficos principales de los participantes.
+Finalmente, cuando todas las variables estén generadas y revisadas se creará una
+base de datos común con todas ellas y los datos sociodemográficos principales de los participantes.
 
 <!--# TODO: Borrar párrafos anteriores -->
 
