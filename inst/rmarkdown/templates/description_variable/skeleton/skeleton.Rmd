@@ -242,7 +242,7 @@ codebook <variable(s) generada(s)>
 
 -   Variable/s de identificación
 
-**La variable de identificación que debes incluir para la cohorte 2019 es
+**La variable de identificación que debes incluir para la cohorte 2011 es
 ID_ECS**. Para conocer la equivalencia y las particularidades de las distintas
 variables de identificación, por favor, revisa la tabla 1 en el documento
 [LÉEME. Pautas para la creación de variables..docx](https://dauam-my.sharepoint.com/:w:/r/personal/marta_miret_uam_es/Documents/Edad%20con%20Salud/Documentacion%20Edad%20con%20Salud/Edad%20con%20salud%20-%20Ola%203/Outcomes/L%C3%89EME.%20Pautas%20para%20la%20creaci%C3%B3n%20de%20variables..docx?d=wb61214c5b3e542638e3af80472f0089c&csf=1&web=1&e=GFJJ2i)
