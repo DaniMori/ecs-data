@@ -189,6 +189,7 @@ validate_docs <- function(paths, recursive = TRUE) {
 }
 
 #' @importFrom rmarkdown render
+#' @importFrom xfun      Rscript_call
 render_outcome_docs <- function(documents,
                                 recursive = TRUE,
                                 overwrite = OVERWRITE_OPTIONS) {
@@ -206,11 +207,14 @@ render_outcome_docs <- function(documents,
       message(DOC_WILL_NOT_BE_OVERWRITTEN, ENDLINE, output_doc)
     }
 
-    rmarkdown::render(
-      input = documents$input[index],
-      output_format = "word_document",
-      output_dir    = dirname(output_doc),
-      params = list(test = FALSE)
+    xfun::Rscript_call(
+      rmarkdown::render,
+      list(
+        input         = documents$input[index],
+        output_format = "word_document",
+        output_dir    = dirname(output_doc),
+        params        = list(test = FALSE)
+      )
     )
   }
 }
