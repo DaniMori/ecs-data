@@ -39,7 +39,6 @@
 #' @importFrom rstudioapi        showDialog
 #' @importFrom Statamarkdown     find_stata
 #' @importFrom stringr           str_extract
-#' @importFrom utils             flush.console install.packages
 #'
 #' @family configuration functions
 #' @examples \dontrun{configure_ecs()}

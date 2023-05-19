@@ -19,7 +19,6 @@
 #' @importFrom configr    write.config
 #' @importFrom glue       glue
 #' @importFrom rstudioapi selectDirectory
-#' @importFrom utils      flush.console
 #'
 #' @family configuration functions
 #' @examples \dontrun{config_ecs_folders()}
