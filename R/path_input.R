@@ -58,7 +58,6 @@ pathInput <- function(input_id,
 #' @importFrom rstudioapi           getActiveProject selectDirectory
 #' @importFrom shiny                isolate radioButtons reactive reactiveValues
 #'                                  renderText
-#' @importFrom utils                choose.files Filters
 pathConnection <- function(input,
                            output,
                            session,
